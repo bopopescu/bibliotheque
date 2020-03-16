@@ -1,0 +1,99 @@
+/* skin cours */
+body{
+margin-top: 4pt;
+font-family: Arial, sans-serif;
+font-size: 1em;
+color: #000;
+background-color: inherit;
+text-align: justify;
+margin-left: 0; margin-right: 0;/*IE*/
+}
+header#hpage{
+width: 82%;
+margin: 6pt auto 14pt;
+padding: 10pt 40pt 0;
+border: solid 4pt #4A7D9C;
+font-size: 2.1em;
+}
+header#hpage p{
+padding: 0;
+font-weight: bolder;
+font-variant: small-caps;
+text-align: center;
+}
+nav{
+width: 82%;
+margin: 10pt auto;
+padding: 4pt 40pt 10pt;
+border: solid 4pt #4A7D9C;
+}
+main{
+width: 82%;
+margin: 0 auto;
+padding: 4pt 40pt 10pt;
+border: solid 4pt #4A7D9C;
+display: block;/*IE*/
+}
+footer{
+width: 82%;
+margin: 11pt auto 0;
+padding: 4pt 44pt 0;
+border-top: #4A7D9C solid 8pt;
+color: #000;
+font-size: 0.6em;
+text-align: center;
+}
+h1{
+font-size: 1.7em;
+font-weight: bolder;
+border: solid 2.5pt #000;
+padding: 5pt 10pt;
+border-left-width: 45pt;
+}
+h2{
+margin-top: 40pt;
+color: #FFF;
+background-color: #000;
+font: bold 1.4em Arial, sans-serif;
+border: solid 2.5pt #000;
+border-left-width: 15pt;
+padding-left: 8pt;
+}
+main h2{
+color: #000;
+background-color: #FFF;
+}
+h3{
+border: dashed 1pt gray;
+padding: 4pt 8pt;
+margin-top: 38pt;
+}
+h4{
+margin-top: 2.5em;
+font-size: 1em;
+font-weight:bolder;
+border: solid 0pt #000;
+border-left-width: 1.2em;
+border-bottom-width: 1pt;
+padding-left: 0.6em;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+h5{
+margin-top: 2.5em;
+font-size: 1em;
+font-weight:bolder;
+border: solid 0pt #000;
+border-left-width: 1.2em;
+border-bottom-width: 1pt;
+padding-left: 0.6em;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+table.cours{margin-left: 25px;border-collapse: collapse ;}
+table.cours td, table.cours th{border: 1px solid gray;padding: 3pt 6pt;}
+table.cours tr:hover{background-color: #D3D3D3;}
+
+/* SUPPR ? */
+img.exemple{vertical-align: top;}

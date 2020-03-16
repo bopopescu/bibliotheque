@@ -1,0 +1,1868 @@
+﻿/* FicheFormation.css */
+/* Styles pour les fiches de formation donc c'est du texte dans la BD qui les utilise */
+
+/* ***************************************************** */
+/* *** Divers ****************************************** */
+/* ***************************************************** */
+@import url(https://fonts.googleapis.com/css?family=Molle:400italic);
+
+/*Avec npm run production, la première règle CSS était enlevée alors j'en ai ajoutée une bidon*/
+.rien {
+    color: inherit;
+}
+
+/* Pour afficher le titre du chapitre en haut du titre de la première fiche du chapitre */
+h1 .titrechapitre {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#textefiche h2, #tinymce h2 {
+    margin: 15px 0px 10px 0px;
+    font-size: 1.2em;
+    color: #1A61A8; /* bleu moyen */
+}
+
+#textefiche h3, #tinymce h3 {
+    margin: 15px 0px 10px 0px;
+    font-size: 1.15em;
+    font-weight: normal;
+    color: #55AED9; /* bleu  */
+}
+
+#textefiche h4, #tinymce h4 {
+    margin: 15px 0px 10px 0px;
+    font-size: 1em;
+    color: #434343; /* gris foncé */
+}
+
+#textefiche .important, #tinymce .important {
+    color: black;
+    font-weight: normal;
+    /*background-color: #F5D469; */ /* orange pâle */
+    background-color: #FFF4AB;   /* jaune beige */
+    border: 1px solid #FFED7A;  /* jaune un peu plus foncé */
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#textefiche p.important, #tinymce p.important,
+#textefiche div.important, #tinymce div.important {
+    display: inline-block;   /* pour ne pas que la couleur de fond s'étende sur toute la largeur de la page */
+    border-top: 1px solid #D2C09D;   /* beige foncé comme titre extrait */
+    border-bottom: 1px solid #D2C09D;   /* beige foncé comme titre extrait */
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+#textefiche .barre, #tinymce .barre {
+    text-decoration: line-through;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .inactif, #tinymce .inactif {
+    color: #a7a2a2; /* gris un peu plus pâle que le texte de la zone contenu */
+}
+
+#textefiche .norme, #tinymce .norme {
+    padding-left: 5px; /* comme codetab (5px + 25px du border-image) car souvent, on aura un exemple qui suit donc tout sera aligné */
+    padding-right: 3px;
+    background-color: #ffffff;
+    border-top-width: 5px; /* est utilisé par border-image */
+    border-bottom-width: 5px;
+    border-left-width: 25px;
+    border-right-width: 25px;
+    border-width: /*\**/ 2px\9; /* hack pour IE8 car on ne veut pas une bordure de 25px */
+    -o-border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+    -icab-border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+    -khtml-border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+    -moz-border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+    -webkit-border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+    border-image: url('/medias/commun/Norme.png') 5 5 25 25 round round;
+}
+
+#textefiche .reference, #tinymce .reference {
+    text-align: left;
+}
+
+#textefiche .copyright, #tinymce .copyright {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+#textefiche .terme, #tinymce .terme {
+    font-style: italic;
+}
+
+#textefiche .instruction, #tinymce .instruction {
+    font-weight: 600;   /* semi bold. Fera du gras si la police n'a pas d'intermédiaire. */
+}
+
+#textefiche .valeur, #tinymce .valeur {
+    font-style: italic;
+    font-weight: 600;   /* semi bold. Fera du gras si la police n'a pas d'intermédiaire. */
+}
+
+#textefiche p.testopacite25, #tinymce p.testopacite25 {
+    background-color: rgba(191,186,132,0.25);
+}
+
+#textefiche p.testopacite50, #tinymce p.testopacite50 {
+    background-color: rgba(191,186,132,0.5);
+}
+
+#textefiche p.testopacite75, #tinymce p.testopacite75 {
+    background-color: rgba(191,186,132,0.75);
+}
+
+#textefiche p.testopacite100, #tinymce p.testopacite100 {
+    background-color: rgb(191,186,132);
+}
+
+#textefiche .testdegradecss, #tinymce .testdegradecss {
+    display: block;
+    min-height: 100px;
+    background-image: linear-gradient(bottom, rgb(255,255,255) 8%, rgb(53,106,150) 65%, rgb(53,106,150) 67%, rgb(112,166,216) 99%);
+    background-image: -o-linear-gradient(bottom, rgb(255,255,255) 8%, rgb(53,106,150) 65%, rgb(53,106,150) 67%, rgb(112,166,216) 99%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 8%, rgb(53,106,150) 65%, rgb(53,106,150) 67%, rgb(112,166,216) 99%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 8%, rgb(53,106,150) 65%, rgb(53,106,150) 67%, rgb(112,166,216) 99%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 8%, rgb(53,106,150) 65%, rgb(53,106,150) 67%, rgb(112,166,216) 99%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.08, rgb(255,255,255)), color-stop(0.65, rgb(53,106,150)), color-stop(0.67, rgb(53,106,150)), color-stop(0.99, rgb(112,166,216)) );
+}
+
+#textefiche .testpolicenonstandard, #tinymce .testpolicenonstandard {
+    font-family: 'Molle', cursive;
+    font-size: 2em;
+}
+
+#textefiche ul.testlistelozange, #tinymce ul.testlistelozange {
+    list-style: none;
+}
+
+#textefiche ul.testlistelozange li, #tinymce ul.testlistelozange li {
+    list-style-image: none;
+}
+
+#textefiche ul.testlistelozange li:before, #tinymce ul.testlistelozange li:before {
+    content: "\2666 \0020"; /* un losange suivi d'un espace */
+    color: #a70101; /* rouge vin */
+}
+
+#textefiche ul.testlistetraitunion, #tinymce ul.testlistetraitunion {
+    list-style: none;
+}
+
+#textefiche ul.testlistetraitunion li, #tinymce ul.testlistetraitunion li {
+    list-style-image: none;
+}
+
+#textefiche ul.testlistetraitunion li:before, #tinymce ul.testlistetraitunion li:before {
+    content: "- "; 
+}
+
+#textefiche .sortieecrancourrier, #tinymce .sortieecrancourrier {
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    width: 850px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .couleur1, #tinymce .couleur1 {
+    color: black;
+    font-weight: normal;
+    background-color: #9FD041; /* vert pâle */
+    border: 1px solid #84B42D;  /* vert un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur2, #tinymce .couleur2 {
+    color: black;
+    font-weight: normal;
+    background-color: #3AA9D4; /* bleu pâle */
+    border: 1px solid #278CB4;  /* bleu un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur3, #tinymce .couleur3 {
+    color: black;
+    font-weight: normal;
+    background-color: #FE8C1B; /* orange */
+    border: 1px solid #E47301;  /* orange un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur4, #tinymce .couleur4 {
+    color: white;
+    font-weight: normal;
+    background-color: #8F1FFF; /* mauve */
+    border: 1px solid #7500EB;  /* mauve un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur5, #tinymce .couleur5 {
+    color: black;
+    font-weight: normal;
+    background-color: #F0C300; /* jaune or */
+    border: 1px solid #D6AF00;  /* jaune or un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur6, #tinymce .couleur6 {
+    color: black;
+    font-weight: normal;
+    background-color: #F16AD6; /* rose */
+    border: 1px solid #C43A68;  /* rose un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur7, #tinymce .couleur7 {
+    color: black;
+    font-weight: normal;
+    background-color: #A6A6A6; /* gris */
+    border: 1px solid #8C8C8C;  /* gris un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur8, #tinymce .couleur8 {
+    color: white;
+    font-weight: normal;
+    background-color: #384E66; /* marine */
+    border: 1px solid #263545;  /* marine un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur9, #tinymce .couleur9 {
+    color: white;
+    font-weight: normal;
+    background-color: #735340; /* brun */
+    border: 1px solid #523B2E;  /* brun un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur10, #tinymce .couleur10 {
+    color: black;
+    font-weight: normal;
+    background-color: #D0B387; /* beige */
+    border: 1px solid #C29B61;  /* beige un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .couleur11, #tinymce .couleur11 {
+    color: white;
+    font-weight: normal;
+    background-color: #900020; /* bourgogne */
+    border: 1px solid #5C0014;  /* bourgogne un peu plus foncé */
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur1, #tinymce .encadrecouleur1 {
+    border-color: #9FD041; /* vert pâle */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur2, #tinymce .encadrecouleur2 {
+    border-color: #3AA9D4; /* bleu pâle */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur3, #tinymce .encadrecouleur3 {
+    border-color: #FE8C1B; /* orange */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur4, #tinymce .encadrecouleur4 {
+    border-color: #8F1FFF; /* mauve */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur5, #tinymce .encadrecouleur5 {
+    border-color: #F0C300; /* jaune or */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur6, #tinymce .encadrecouleur6 {
+    border-color: #F16AD6; /* rose */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur7, #tinymce .encadrecouleur7 {
+    border-color: #A6A6A6; /* gris */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur8, #tinymce .encadrecouleur8 {
+    border-color: #384E66; /* marine */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur9, #tinymce .encadrecouleur9 {
+    border-color: #735340; /* brun */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur10, #tinymce .encadrecouleur10 {
+    border-color: #D0B387; /* beige */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .encadrecouleur11, #tinymce .encadrecouleur11 {
+    border-color: #900020; /* bourgogne */
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#textefiche .soulignecouleur1, #tinymce .soulignecouleur1 {
+    border-bottom-color: #9FD041; /* vert pâle */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur2, #tinymce .soulignecouleur2 {
+    border-bottom-color: #3AA9D4; /* bleu pâle */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur3, #tinymce .soulignecouleur3 {
+    border-bottom-color: #FE8C1B; /* orange */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur4, #tinymce .soulignecouleur4 {
+    border-bottom-color: #CC99FF; /* lilas */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur5, #tinymce .soulignecouleur5 {
+    border-bottom-color: #F0C300; /* jaune or */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur6, #tinymce .soulignecouleur6 {
+    border-bottom-color: #F16AD6; /* rose */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur7, #tinymce .soulignecouleur7 {
+    border-bottom-color: #A6A6A6; /* gris */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur8, #tinymce .soulignecouleur8 {
+    border-bottom-color: #384E66; /* marine */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur9, #tinymce .soulignecouleur9 {
+    border-bottom-color: #735340; /* brun */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur10, #tinymce .soulignecouleur10 {
+    border-bottom-color: #D0B387; /* beige */
+    border-bottom-style: solid;
+}
+
+#textefiche .soulignecouleur11, #tinymce .soulignecouleur11 {
+    border-bottom-color: #900020; /* bourgogne */
+    border-bottom-style: solid;
+}
+
+#textefiche .normal, #tinymce .normal {
+    font-family: Sans, Arial;
+    font-size: 1em;
+    color: #5a5151; /* gris */
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+#textefiche .demodebug, #tinymce .demodebug {
+    display: block; /* sera pleine largeur et permettra d'ajouter de marge haut et bas */
+    background-color: #FCA12D; /* orangé */
+    color: black;
+    font-size: 1.1em;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F18A04; /* jaune un peu plus foncé */
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#textefiche .demomessageerreur, #tinymce .demomessageerreur {
+    display: block; /* sera pleine largeur et permettra d'ajouter de marge haut et bas */
+    background-color: #F7F4E7; /* Gris-beige zone principale */
+    background-image: url("/medias/commun/ico-erreur.png");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    color: #E71717; /* Rouge */
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bebdbd; /* gris pâle */
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#textefiche .demomessageavertissement, #tinymce .demomessageavertissement {
+    display: block; /* sera pleine largeur et permettra d'ajouter de marge haut et bas */
+    background-color: #F7F4E7; /* Gris-beige zone principale */
+    background-image: url("/medias/commun/ico-attention.png");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    color: #FB7A1C; /* orange foncé */
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bebdbd; /* gris pâle */
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#textefiche .demomessageinformation, #tinymce .demomessageinformation {
+    display: block; /* sera pleine largeur et permettra d'ajouter de marge haut et bas */
+    background-color: #F7F4E7; /* Gris-beige zone principale */
+    background-image: url("/medias/commun/ico-information.png");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    color: #1A61A8; /* bleu moyen */
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bebdbd; /* gris pâle */
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+#textefiche .indicatif, #tinymce .indicatif {
+    font-style: italic;
+    background-color: #E1DABC;
+}
+
+#textefiche img, #tinymce img {
+    max-width: 100%;
+}
+
+#textefiche .forcerwrap, #tinymce .forcerwrap {
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
+
+#textefiche a.url {
+    font-size: 0.8em;
+}
+
+/* ***************************************************** */
+/* *** Date de dernière modification ******************* */
+/* ***************************************************** */
+#datemodificationfiche {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* ***************************************************** */
+/* *** Images ****************************************** */
+/* ***************************************************** */
+#textefiche .imageligne, #tinymce .imageligne {
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+#textefiche .imagedroite, #tinymce .imagedroite,
+#textefiche .alignright, #tinymce .alignright {
+    float: right;
+    margin: 0 0 10px 15px;
+    border: none;
+    text-decoration: none;
+}
+
+#textefiche .imagegauche, #tinymce .imagegauche {
+    float: left;
+    margin: 0 0 15px 10px;
+    border: none;
+    text-decoration: none;
+}
+
+#textefiche .imagecentre, #tinymce .imagecentre {
+    display: block;   /* sinon ne pourra pas être centrée */
+    margin: auto;
+    border: none;
+    text-decoration: none;
+}
+
+#textefiche .imagedroiteencadre, #tinymce .imagedroiteencadre {
+    float: right;
+    margin-left: 10px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+    -moz-box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+    -webkit-box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+}
+
+#textefiche .imageencadre, #tinymce .imageencadre {
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+    -moz-box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+    -webkit-box-shadow: 2px 2px 6px rgba(37, 24, 24,0.2);
+}
+
+#textefiche .imagedroiteespace, #tinymce .imagedroiteespace {
+    float: right;
+    margin-left: 10px;
+    margin-right: 50px;
+    border: none;
+    text-decoration: none;
+}
+
+#textefiche .imagedroiteespace2, #tinymce .imagedroiteespace2 {
+    float: right;
+    margin-left: 10px;
+    margin-right: 100px;
+    border: none;
+    text-decoration: none;
+}
+
+#textefiche .imagehaut, #tinymce .imagehaut {
+    vertical-align: top;
+}
+
+/* image qui doit être sur la même ligne que Ex : donc doit être alignée en haut */
+#textefiche .imageexemple, #tinymce .imageexemple {
+    vertical-align: top;
+}
+
+/* ***************************************************** */
+/* *** Tableaux **************************************** */
+/* ***************************************************** */
+#textefiche table, #tinymce table {
+    border: none;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+#textefiche table th, #tinymce table th {
+    text-align: left;
+    background-color: #6A6C61; /* Beige 1 */
+    color: White;
+    padding: 5px;
+    border-top: 1px solid #F7F7F2;
+    border-left: 1px solid #F7F7F2;
+    border-right: 1px solid #DADBD6;
+    border-bottom: 1px solid #DADBD6;
+}
+
+#textefiche table td, #tinymce table td  {
+    text-align: left;
+    background-color: #F3F3F1; /* Beige 4 */
+    padding: 5px;
+    border-top: 1px solid #F7F7F2;
+    border-left: 1px solid #F7F7F2;
+    border-right: 1px solid #DADBD6;
+    border-bottom: 1px solid #DADBD6;
+}
+
+#textefiche table tr.separation td, #tinymce table tr.separation td {
+    background-color: #4788BD; /* bleu */
+    color: white;
+}
+
+#textefiche table td.colonnecrochets, #tinymce table td.colonnecrochets {
+    text-align: center;
+}
+
+#textefiche table td p, #tinymce table td p {
+    text-align: left;
+}
+
+#textefiche table td ul, #tinymce table td ul {
+    text-align: left;
+}
+
+#textefiche table li, #tinymce table li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#textefiche table th.sansfond, #tinymce table th.sansfond {
+    background-color: transparent;
+    border: none;
+}
+
+#textefiche table td.sansfond, #tinymce table td.sansfond {
+    background-color: transparent;
+    border: none;
+}
+
+#textefiche table td.white, #tinymce table td.white {
+    background-color: white;
+}
+
+#textefiche table td.yellow, #tinymce table td.yellow {
+    background-color: yellow;
+}
+
+#textefiche table td.black, #tinymce table td.black {
+    background-color: black;
+}
+
+#textefiche table td.maroon, #tinymce table td.maroon {
+    background-color: maroon;
+}
+
+#textefiche table td.red, #tinymce table td.red {
+    background-color: red;
+}
+
+#textefiche table td.orange, #tinymce table td.orange {
+    background-color: orange;
+}
+
+#textefiche table td.purple, #tinymce table td.purple {
+    background-color: purple;
+}
+
+#textefiche table td.lime, #tinymce table td.lime {
+    background-color: lime;
+}
+
+#textefiche table td.fuchsia, #tinymce table td.fuchsia {
+    background-color: fuchsia;
+}
+
+#textefiche table td.blue, #tinymce table td.blue {
+    background-color: blue;
+}
+
+#textefiche table td.olive, #tinymce table td.olive {
+    background-color: olive;
+}
+
+#textefiche table td.green, #tinymce table td.green {
+    background-color: green;
+}
+
+#textefiche table td.navy, #tinymce table td.navy {
+    background-color: navy;
+}
+
+#textefiche table td.silver, #tinymce table td.silver {
+    background-color: silver;
+}
+
+#textefiche table td.teal, #tinymce table td.teal {
+    background-color: teal;
+}
+
+#textefiche table td.gray, #tinymce table td.gray {
+    background-color: gray;
+}
+
+#textefiche table td.aqua, #tinymce table td.aqua {
+    background-color: aqua;
+}
+
+#textefiche table.tableauattitudes li, #tinymce table.tableauattitudes li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#textefiche table.tableausignatures, #tinymce table.tableausignatures {
+    border: none;
+}
+
+#textefiche table.tableausignatures th, #tinymce table.tableausignatures th {
+    border: none;
+}
+
+#textefiche table.tableausignatures td, #tinymce table.tableausignatures td {
+    text-align: right;
+    border: none;
+    background-color: transparent;
+}
+
+#textefiche table.alignementhaut td, #tinymce table.alignementhaut td {
+    vertical-align: top;
+}
+
+@media screen {
+    #textefiche table.horaire, #tinymce table.horaire {
+        width: 100%;
+        margin-top: 10px; /* pour le séparer des coordonnées. seront plus collées à l'impression */ /* 		border: none; 		border-collapse: separate; 		border-spacing: 1px; 		*/
+    }
+
+    #textefiche table.horaire th, #tinymce table.horaire th {
+        text-align: center;
+    }
+
+    #textefiche table.horaire td, #tinymce table.horaire td {
+        text-align: center;
+        width: 16.66%;
+    }
+
+    #textefiche table.horaire td p, #tinymce table.horaire td p {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+@media print /* ajusté pour que l'horaire précédé des coordonnées entre sur une page imprimée */
+{
+    #textefiche table.horaire, #tinymce table.horaire {
+        width: 100%;
+    }
+
+    #textefiche table.horaire th , #tinymce table.horaire th{
+        text-align: center;
+    }
+
+    #textefiche table.horaire td, #tinymce table.horaire td {
+        text-align: center;
+        width: 16.66%;
+        padding: 0;
+        height: 30pt; /* hauteur minimale d'environ 2 lignes, pour uniformiser la hauteur à l'impression car les heures, marquées par des <p>, ne font pas de saut de ligne */
+    }
+
+    #textefiche table.horaire td p, #tinymce table.horaire td p {
+        display: inline; /* on veut avoir un horaire imprimé sur 1/2 feuille donc on économise l'espace */
+        text-align: center;
+        margin: 5px; /* si on avait du texte sur 2 lignes, il y aura un espacement entre le dernier mot de la 1ere ligne et le premier de la suivante */
+    }
+}
+
+#textefiche table.coordonneeshoraire img, #tinymce table.coordonneeshoraire img {
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgba(37, 24, 24,0.7);
+}
+
+@media screen {
+    #textefiche table.coordonneeshoraire, #tinymce table.coordonneeshoraire {
+        border: none;
+    }
+
+    #textefiche table.coordonneeshoraire td, #tinymce table.coordonneeshoraire td {
+        border: none;
+        background-color: transparent;
+        padding-right: 15px;
+    }
+
+    #textefiche table.coordonneeshoraire td p, #tinymce table.coordonneeshoraire td p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #textefiche table.coordonneeshoraire h3, #tinymce table.coordonneeshoraire h3 {
+        text-align: left;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media print {
+    #textefiche table.coordonneeshoraire, #tinymce table.coordonneeshoraire {
+        border: none;
+        margin-top: 80px; /* permettra de découper les titres pour ne garder que l'horaire */
+        margin-bottom: 25px;
+    }
+
+    #textefiche table.coordonneeshoraire td, #tinymce table.coordonneeshoraire td {
+        border: none;
+        background-color: transparent;
+        padding-right: 15px;
+    }
+
+    #textefiche table.coordonneeshoraire td p, #tinymce table.coordonneeshoraire td p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #textefiche table.coordonneeshoraire h3, #tinymce table.coordonneeshoraire h3 {
+        text-align: left;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #textefiche table.coordonneeshoraire a, #tinymce table.coordonneeshoraire a {
+        text-decoration: none;
+        color: Black;
+    }
+}
+
+/* ********************************************************* */
+/* *** Tableau large avec scroll bar dans le bas *********** */
+/* <div class="tableauscroll"><table>...</table></div> */
+/* ********************************************************* */
+#textefiche div.tableauscroll, #tinymce div.tableauscroll {
+    display: block;
+    overflow:auto;
+}
+
+#textefiche div.tableauscroll table, #tinymce div.tableauscroll table {
+    width:1500px;
+}
+
+/* ********************************************************* */
+/* *** Cellule large avec scroll bar dans le bas *********** */
+/* <td class="cellulescroll moyen"><div>...</div></td> */
+/* ********************************************************* */
+#textefiche td.cellulescroll.moyen, #tinymce td.cellulescroll.moyen {
+    width: 250px;
+    white-space: nowrap;
+}
+
+#textefiche td.cellulescroll div, #tinymce td.cellulescroll div {
+    overflow: auto;
+    overflow-y:hidden;
+}
+
+/* ********************************************************* */
+/* *** Forcer tableau sans bordures ************************ */
+/* ********************************************************* */
+#textefiche table.aucunebordure, #tinymce table.aucunebordure {
+    border: none;
+}
+
+#textefiche table.aucunebordure th, #tinymce table.aucunebordure th {
+    border: none;
+}
+
+#textefiche table.aucunebordure td, #tinymce table.aucunebordure td {
+    border: none;
+    background-color: transparent;
+}
+
+/* ********************************************************* */
+/* *** Forcer tableau avec bordure seulement alentour du tableau *** */
+/* ********************************************************* */
+#textefiche table.encadre, #tinymce table.encadre {
+    border-color: #bebdbd; /* gris pâle */
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+    padding-right: 10px;
+}
+
+#textefiche table.encadre th, #tinymce table.encadre th {
+    border: none;
+}
+
+#textefiche table.encadre td, #tinymce table.encadre td {
+    border: none;
+    padding: 2px;
+    background-color: transparent;
+}
+
+#textefiche table.encadre td label, #tinymce table.encadre td label {
+}
+
+/* ***************************************************** */
+/* *** Code ******************************************** */
+/* ***************************************************** */
+#textefiche p, #tinymce p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#textefiche .extraitcode, #tinymce .extraitcode {
+    margin: 1em 140px 1em 0;
+    border: 1px solid #B5B6AF; /* taupe 7 */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    width: 100%;
+    color: #666666;
+    white-space: nowrap;
+}
+
+@media print {
+    #textefiche .extraitcode, #tinymce .extraitcode {
+        overflow: visible;
+        white-space: pre;           /* CSS 2.0 */
+        white-space: pre-wrap;      /* CSS 2.1 */
+        white-space: pre-line;      /* CSS 3.0 */
+        white-space: -pre-wrap;     /* Opera 4-6 */
+        white-space: -o-pre-wrap;   /* Opera 7 */
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap;  /* HP Printers */
+        word-wrap: break-word;      /* IE 5+ */
+        white-space: normal;
+    }
+}
+
+#textefiche .extraitcode p, #tinymce .extraitcode p {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+#textefiche .extraitcode .titre, #tinymce .extraitcode .titre,
+#textefiche .extraitcode .titreextrait, #tinymce .extraitcode .titreextrait {
+    font-size: 0.9em;
+    font-family: 'Trebuchet MS',Helvetica,Arial,sans-serif;
+    padding: 8px;
+    border-bottom: 1px solid #B5B6AF; /* taupe 7 */
+    border-top-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -khtml-border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -khtml-border-top-right-radius: 4px;
+    background: #C1C2BC linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);  /* beige moyen */
+    background: #C1C2BC -webkit-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C1C2BC -moz-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C1C2BC -ms-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C1C2BC -o-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+}
+
+#textefiche .extraitcode .codephp, #tinymce .extraitcode .codephp,
+#textefiche .extraitcode .codejson, #tinymce .extraitcode .codejson,
+#textefiche .extraitcode .codepython, #tinymce .extraitcode .codepython,
+#textefiche .extraitcode .codecsharp, #tinymce .extraitcode .codecsharp,
+#textefiche .extraitcode .coderazor, #tinymce .extraitcode .coderazor,
+#textefiche .extraitcode .codeblade, #tinymce .extraitcode .codeblade,
+#textefiche .extraitcode .codehtml, #tinymce .extraitcode .codehtml,
+#textefiche .extraitcode .codejavascript, #tinymce .extraitcode .codejavascript,
+#textefiche .extraitcode .codeasp, #tinymce .extraitcode .codeasp,
+#textefiche .extraitcode .codesql, #tinymce .extraitcode .codesql,
+#textefiche .extraitcode .codexml, #tinymce .extraitcode .codexml,
+#textefiche .extraitcode .codecss, #tinymce .extraitcode .codecss,
+#textefiche .extraitcode .codedos, #tinymce .extraitcode .codedos,
+#textefiche .extraitcode .codeautre, #tinymce .extraitcode .codeautre {
+    font-size: 1.1em;
+    font-family: Consolas,'Courier New',Courier,monospace;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    word-wrap: normal;
+    direction: ltr;
+    background: #FFFFFF linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF -webkit-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF -moz-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF -ms-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF -o-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    overflow: auto;
+}
+
+#textefiche .syntaxe, #tinymce .syntaxe {
+    margin: 1em 140px 1em 0;
+    border: 1px solid #6EAEE2;   /* bleu moyen */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    width: 100%;
+    color: #082C59;   /* bleu foncé */
+}
+
+#textefiche .syntaxe p, #tinymce .syntaxe p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#textefiche .syntaxe .titre, #tinymce .syntaxe .titre,
+#textefiche .syntaxe .titresyntaxe, #tinymce .syntaxe .titresyntaxe {
+    font-size: 0.9em;
+    font-family: 'Trebuchet MS',Helvetica,Arial,sans-serif;
+    padding: 8px;
+    border-bottom: 1px solid #6EAEE2;   /* bleu moyen */
+    border-top-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -khtml-border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -khtml-border-top-right-radius: 4px;
+    background: #C3DEF3 linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);  /* bleu pâle */
+    background: #C3DEF3 -webkit-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C3DEF3 -moz-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C3DEF3 -ms-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+    background: #C3DEF3 -o-linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.0) 70%);
+}
+
+#textefiche .syntaxe .codephp, #tinymce .syntaxe .codephp,
+#textefiche .syntaxe .codejson, #tinymce .syntaxe .codejson,
+#textefiche .syntaxe .codepython, #tinymce .syntaxe .codepython,
+#textefiche .syntaxe .codecsharp, #tinymce .syntaxe .codecsharp,
+#textefiche .syntaxe .coderazor, #tinymce .syntaxe .coderazor,
+#textefiche .syntaxe .codeblade, #tinymce .syntaxe .codeblade,
+#textefiche .syntaxe .codehtml, #tinymce .syntaxe .codehtml,
+#textefiche .syntaxe .codejavascript, #tinymce .syntaxe .codejavascript,
+#textefiche .syntaxe .codeasp, #tinymce .syntaxe .codeasp,
+#textefiche .syntaxe .codesql, #tinymce .syntaxe .codesql,
+#textefiche .syntaxe .codexml, #tinymce .syntaxe .codexml,
+#textefiche .syntaxe .codecss, #tinymce .syntaxe .codecss,
+#textefiche .syntaxe .codedos, #tinymce .syntaxe .codedos,
+#textefiche .syntaxe .codeautre, #tinymce .syntaxe .codeautre {
+    font-size: 1.1em;
+    font-family: Consolas,'Courier New',Courier,monospace;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    word-wrap: normal;
+    direction: ltr;
+    background: #F2EDE3 linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #F2EDE3 -webkit-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #F2EDE3 -moz-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #F2EDE3 -ms-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    background: #F2EDE3 -o-linear-gradient(rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+    white-space: nowrap;
+    overflow: auto;
+}
+
+#textefiche table.tableaucode, #tinymce table.tableaucode {
+    width: 810px;
+}
+
+#textefiche table.tableaucode td, #tinymce table.tableaucode td {
+    width: 50%;
+    vertical-align: top;
+    font-size: 0.9em;
+    border: none;
+}
+
+/* ***************************************************** */
+/* *** Listes ****************************************** */
+/* ***************************************************** */
+#textefiche ol, #tinymce ol,
+#textefiche ul, #tinymce ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#textefiche li, #tinymce li {
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+
+#textefiche ol.alphabet, #tinymce ol.alphabet {
+    list-style-type: lower-alpha;
+}
+
+#textefiche li.clavier, #tinymce li.clavier {
+    list-style-image: url("/medias/commun/puce-clavier.gif" );
+    margin-left: 15px; /* l'image est plus large qu'une simple puce */
+}
+
+#textefiche li.clavier li, #tinymce li.clavier li {
+    list-style-image: none;
+    margin-left: inherit;
+}
+
+#textefiche li.ruban, #tinymce li.ruban {
+    list-style-image: url("/medias/commun/puce-ruban.gif" );
+    margin-left: 20px;
+}
+
+#textefiche li.ruban li, #tinymce li.ruban li {
+    list-style-image: none;
+    margin-left: inherit;
+}
+
+#textefiche li.souris, #tinymce li.souris {
+    list-style-image: url("/medias/commun/puce-souris.gif" );
+    margin-left: 15px;
+}
+
+#textefiche li.souris li, #tinymce li.souris li {
+    list-style-image: none;
+    margin-left: inherit;
+}
+
+#textefiche li.word97, #tinymce li.word97 {
+    list-style-image: url("/medias/commun/puce-word97.jpg" );
+    margin-left: 15px;
+}
+
+#textefiche li.word97 li, #tinymce li.word97 li {
+    list-style-image: none;
+    margin-left: inherit;
+}
+
+#textefiche li.vista, #tinymce li.vista {
+    list-style-image: url("/medias/commun/puce-vista.gif" );
+    margin-left: 15px;
+}
+
+#textefiche li.vista li, #tinymce li.vista li {
+    list-style-image: none;
+    margin-left: inherit;
+}
+
+#textefiche li.xp, #tinymce li.xp {
+    list-style-image: url("/medias/commun/puce-XP.gif" );
+    margin-left: 15px;
+}
+
+#textefiche li.xp, #tinymce li.xp {
+    list-style-image: url("/medias/commun/puce-vista.gif" );
+    margin-left: 15px;
+}
+
+/* ********************************************************* */
+/* *** grosseur du texte *********************************** */
+/* ********************************************************* */
+
+#textefiche.grosseur1, #tinymce.grosseur1 {
+    font-size: 0.4em;
+}
+
+#textefiche.grosseur2, #tinymce.grosseur2 {
+    font-size: 0.6em;
+}
+
+#textefiche.grosseur3, #tinymce.grosseur3 {
+    font-size: 0.8em;
+}
+
+#textefiche.grosseur4, #tinymce.grosseur4 {
+    font-size: 1em;
+}
+
+#textefiche.grosseur5, #tinymce.grosseur5 {
+    font-size: 1.3em;
+}
+
+#textefiche.grosseur6, #tinymce.grosseur6 {
+    font-size: 1.6em;
+}
+
+#textefiche.grosseur7, #tinymce.grosseur7 {
+    font-size: 1.9em;
+}
+
+#textefiche.grosseur8, #tinymce.grosseur8 {
+    font-size: 2.2em;
+}
+
+/* ***************************************************** */
+/* *** touche au clavier dans un texte ***************** */
+/* ***************************************************** */
+#textefiche span.clavier, #tinymce span.clavier {
+    font-family: 'monospace', 'Courrier', sans-serif;
+    font-size: 0.85em;
+    white-space: nowrap;
+    background: #f1f1f1;
+    border: solid;
+    border-radius: 4px;
+    border-width: 1px 2px 2px 1px;
+    border-color: #ddd #bbb #bbb #ddd;
+    padding: 1px 5px;
+    margin: 0 2px;
+
+}
+
+#textefiche span.clavier.plusgros, #tinymce span.clavier.plusgros {
+    font-size: 1.5em;
+}
+
+/* ***************************************************** */
+/* *** titre d'un menu dans un texte ******************* */
+/* ***************************************************** */
+#textefiche span.titremenu, #tinymce span.titremenu {
+    font-family: 'monospace', 'Courrier', sans-serif;
+    font-size: 0.9em;
+    white-space: nowrap;
+    background: #E8E8E8;
+    padding: 2px 5px;
+}
+
+/* ********************************************************* */
+/* *** feuille de résumé *** */
+/* *** style des titres inspiré de http://css-tricks.com/snippets/css/ribbon/ *** */
+/* *** utilisation : <div class="feuilleresume"><h2><span>Titre</span></h2> *** */
+/* *** sans le span, on n'aurait pas l'ombre sous le repli du ruban *** */
+/* ********************************************************* */
+#textefiche .feuilleresume, #tinymce .feuilleresume {
+    position: relative; z-index: 1;
+}
+
+#textefiche .feuilleresume h2, #tinymce .feuilleresume h2 {
+ font-size: 16px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+ color: white;
+ width: 75%;    
+ position: relative;
+ background: #366C98;   /* bleu */
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+#textefiche .feuilleresume h2:before, #tinymce .feuilleresume h2:before,
+#textefiche .feuilleresume h2:after, #tinymce .feuilleresume h2:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #285071;   /* bout du ruban : bleu plus foncé */
+ z-index: -1;
+}
+
+#textefiche .feuilleresume h2:before, #tinymce .feuilleresume h2:before  {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+
+#textefiche .feuilleresume h2:after, #tinymce .feuilleresume h2:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+
+#textefiche .feuilleresume h2 span:before, #tinymce .feuilleresume h2 span:before,
+#textefiche .feuilleresume h2 span:after, #tinymce .feuilleresume h2 span:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #1B354B transparent transparent transparent;   /* ombre sous le repli : bleu encore plus foncé */
+ bottom: -1em;
+}
+
+#textefiche .feuilleresume h2 span:before, #tinymce .feuilleresume h2 span:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+
+#textefiche .feuilleresume h2 span:after, #tinymce .feuilleresume h2 span:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+#textefiche .feuilleresume h3, #tinymce .feuilleresume h3 {
+ font-size: 16px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+ color: white;
+ width: 50%;   
+ position: relative;
+ background: #92C336;   /* vert */
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+#textefiche .feuilleresume h3:before, #tinymce .feuilleresume h3:before,
+#textefiche .feuilleresume h3:after, #tinymce .feuilleresume h3:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #749C2B;   /* bout du ruban : vert plus foncé */
+ z-index: -1;
+}
+
+#textefiche .feuilleresume h3:before, #tinymce .feuilleresume h3:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+
+#textefiche .feuilleresume h3:after, #tinymce .feuilleresume h3:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+
+#textefiche .feuilleresume h3 span:before, #tinymce .feuilleresume h3 span:before,
+#textefiche .feuilleresume h3 span:after, #tinymce .feuilleresume h3 span:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #577420 transparent transparent transparent;   /* ombre sous le repli : vert encore plus foncé */
+ bottom: -1em;
+}
+
+#textefiche .feuilleresume h3 span:before, #tinymce .feuilleresume h3 span:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+
+#textefiche .feuilleresume h3 span:after, #tinymce .feuilleresume h3 span:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+/* ********************************************************* */
+/* *** Anciens styles - NE PLUS UTILISER ******************* */
+/* ********************************************************* */
+#textefiche .syntaxe-old {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 3px;
+    width: 850px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px;
+    text-align: left;
+}
+
+#textefiche p.nospace {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#textefiche table.grillecorrection {
+    /* 	border: solid; 	border-collapse: collapse; 	border-width: 1px; 	*/
+}
+
+#textefiche table.grillecorrection th {
+    /* 	border: solid; 	border-color: #5a5151;  	border-width: 1px; 	*/
+}
+
+#textefiche table.grillecorrection td {
+    /* 	border: solid; 	border-width: 1px; 	*/
+}
+
+#textefiche table.grillecorrection li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#textefiche table.genererpdf, 
+#textefiche table.tablematierespdf {
+    border: none;
+}
+
+#textefiche table.genererpdf th, 
+#textefiche table.tablematierespdf th {
+    border: none;
+}
+
+#textefiche table.genererpdf td, 
+#textefiche table.tablematierespdf td {
+    border: none;
+    background-color: transparent;
+}
+
+#textefiche .code {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    width: 850px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* tableau de deux colonnes de 400px chacune */
+#textefiche table td .code {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    width: 400px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 30px; /* pour les lignes alignées sous Ex : */
+    width: 820px; /* 810-30 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche table td .codetab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 10px; /* pour les indentations de code */
+    width: 395px; /* 400-10+5 (padding) */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 60px;
+    width: 790px; /* 810-60 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche table td .codetabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 20px;
+    width: 385px; /*  400-20+5 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 90px;
+    width: 760px; /* 810-90 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche table td .codetabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 30px;
+    width: 375px; /* 400-30+5 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 120px;
+    width: 730px; /* 810-120 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche table td .codetabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 40px;
+    width: 365px; /* 400-40+5 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 150px;
+    width: 700px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche table td .codetabtabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 50px;
+    width: 355px; /* 400-50+5 */
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtabtabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 180px;
+    width: 670px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .codetabtabtabtabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 210px;
+    width: 640px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait /* texte commence au début du gris mais moins large pour laisser place à deux tabulations avant */ {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 0;
+    width: 800px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetraittab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 30px;
+    width: 770px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetraittabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 60px;
+    width: 740px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetraittabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 90px;
+    width: 710px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetraittabtabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 120px;
+    width: 680px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 0;
+    width: 770px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait2tab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 30px;
+    width: 740px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait2tabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 60px;
+    width: 710px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait2tabtabtab {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 90px;
+    width: 680px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .coderetrait3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EDE6CE; /* Beige zone secondaire plus pâle */
+    padding-left: 0;
+    width: 735px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#textefiche .expascode {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+#textefiche .expascodetab {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 30px; /* pour les lignes alignées sous Ex : */
+    text-align: left;
+}
+
+#textefiche .reponse {
+    width: 810px;
+    color: #032251; /* bleu très foncé */
+    font-weight: bold;
+}
+
+#textefiche .reponsecode {
+    width: 810px;
+    color: #032251; /* bleu très foncé */
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#textefiche .editeurhtml table td {
+    padding: 0; /* sinon il y a de l'espace entre les boutons de la barre d'outils de tinymce -> doit être répété dans le contexte de #textefiche sinon le padding de « #textefiche table td » a préséance */
+}
+
+/* ********************************************************* */
+/* *** citations ******************************************* */
+/* peuvent être utilisées autant dans les fiches que dans les pages statiques ou dynamiques /*
+/* S'assurer que les styles soient identiques à ceux dans commun.css (dans l'affichage des fiches, ce qui est dans commun.css sera pris en compte) */
+/* .citation n'ajoute pas de « » et permet de faire du inline alors que blockquote est obligatoirement en block */
+/* Faire suivre ces styles dasn commun.css pour les pages statiques */
+/* ********************************************************* */
+#tinymce blockquote,
+#tinymce .citation {
+    color: #968C6B; /* kaki pâle */
+    font-size: 1.3em;
+    font-style: italic;
+    text-indent: -17px;
+    text-align: justify;
+    background-position: right bottom;
+    border: none;
+    width: 100%;
+}
+
+#tinymce blockquote {
+    background: url('/medias/commun/CitationFin.png') no-repeat right bottom;
+    margin-right: 15px;
+}
+
+#tinymce blockquote.inline,
+#tinymce p.inline {
+    float: left;
+    max-width: 60%;
+    margin-left: 20px;
+}
+
+#tinymce blockquote.droite,
+#tinymce .citation.droite {
+    float: right;
+}
+
+#tinymce blockquote.etroit,
+#tinymce .citation.etroit{
+    max-width: 30%;
+}
+
+#tinymce blockquote.debutpage,
+#tinymce .citation.debutpage {
+    margin-top: 0;
+}
+
+#tinymce blockquote .auteur,
+#tinymce .citation .auteur{
+    font-family: 'Homemade Apple', cursive;
+    display: block;
+    margin-left: 17px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+#tinymce blockquote .auteur:before,
+#tinymce .citation .auteur:before {
+    content: "\2013 \0020";
+    font-family: auto;   /* ne sortait pas bien en Homemade Apple */
+}
+
+#tinymce blockquote .source,
+#tinymce .citation .source {
+    display: block;
+    margin-left: 17px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+#tinymce blockquote .source:before,
+#tinymce .citation .source:before {
+    content: "Source : ";
+}
+
+#tinymce blockquote:first-letter,
+#tinymce .citation:first-letter {
+    padding-left: 17px;
+    font-size: 1.3em;
+}
+
+#tinymce blockquote:first-letter {
+    background: url('/medias/commun/CitationDebut.png') no-repeat left top;
+    background-position: 0px 6px;
+}
+
+/* ********************************************************* */
+/* *** liens sociaux (dans duplicatas de fiches de christianelagace.com) *** */
+/* ********************************************************* */
+#textefiche .ssba {
+    font-family: 'Homemade Apple', cursive;
+}
+
+#textefiche .ssba .titre {
+    display: block;
+    margin: 50px 0 10px 8px;
+    padding: 0;
+    position: inherit;
+}
+
+#textefiche .ssba img {
+    width: 35px !important;
+    padding: 6px;
+    border: 0;
+    box-shadow: none !important;
+    display: inline !important;
+    vertical-align: middle;
+    box-sizing: unset;
+}
+
+/* ********************************************************* */
+/* *** adsense (dans duplicatas de fiches de christianelagace.com) *** */
+/* ********************************************************* */
+#textefiche .adsense {
+    display: none;
+}
+
+#textefiche .adsense {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #bebdbd;
+    padding: 0 0 10px 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#textefiche .adsense .titre {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 2px;
+    position: inherit;
+    padding: 0;
+}

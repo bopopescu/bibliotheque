@@ -1,0 +1,9 @@
+//argc:permet de compter le nombre d'elements qui est issue dans la ligne lancée
+    //argv: arg[0]qui contient le nom de l'executable,arg[1]:contient la premiere variable,arg[2]:contient la deuxieme variable
+    //pour changer le nom du a.out on fait : gcc somme.c -o nouveau_nom_du_programme
+    /*int a=15,b=5;
+    printf("ENTRER LE PREMIER NOMBRE\n");
+    scanf("%d",&a);
+    printf("ENTRER LE deuxieme NOMBRE\n");
+    scanf("%d",&b);
+    printf("la somme est:%d\n",a+b);*/

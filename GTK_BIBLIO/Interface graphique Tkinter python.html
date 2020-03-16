@@ -1,0 +1,713 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js lang=fr><!--<![endif]--><head><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147979793-1">
+  </script><script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-147979793-1');
+  </script><meta charset=utf-8><meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible><title>Interface graphique Tkinter python</title><meta content="Apprendre à créer des interfaces graphiques en python avec tkinter - cours tutoriel langage de programmation python" name=description><meta content="width=device-width, initial-scale=1" name=viewport><meta content=interface,graphique,python,tkinter name=Keywords><meta content=fr http-equiv=Content-Language><meta content="index, follow" name=robots><meta content=All name=audience><meta content=All name=rating><meta content="2 days" name=revisit-after><meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible><meta content=yes name=apple-mobile-web-app-capable><link href=/images/python.png rel=image_src><meta content=/images/python.png property=og:image><link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel=stylesheet><style>
+     html{padding:0px;margin:0px;  }
+a{color:#428bca;text-decoration:none;}
+body{
+margin:0px;
+padding:0px;
+font-family: 'Open Sans', sans-serif;
+font-size:17px;
+line-height:1.42857143;
+color:#333;
+background-color:#fff;
+padding-bottom:20px;
+}
+#menu_main li a{font-size:0.9em;}
+ul{padding:0px;margin:0px;}
+p{margin:0 0 10px;}
+li{list-style-type:none;padding-left:10px;}
+h1, h2, h3 {font-weight:500;line-height:1.1;margin-top:30px !important;margin-bottom:10px !important;}
+h1{font-size:2em !important;}
+h2{font-size:1.5em !important;}
+#page{max-width:1000px;padding:20px;padding-top:0px;margin-top:0px;}
+#page p{text-align:justify;}
+#page h3{font-size:1.2em !important;margin-top:10px;margin-bottom:10px;}
+.breadcrumb{padding:2px !important;margin-bottom:10px !important;}
+.links_top{
+padding:0px;margin-top:20px;margin-bottom:30px;
+display:block;
+clear:both;
+}
+.links_top > div{
+display:block;
+width:100%;
+}
+.links_top_next{
+text-align:right;
+}
+#menu_main{position:relative;}
+@media (max-width:500px){.float-center{float:none !important;position:relative;clear:both;}
+}
+@media (min-width:993px){#page{margin-left:230px;}
+#menu_main{position:fixed;top:0px;left:0px;width:220px;background-color:#eee;overflow:hidden;margin-top:0px;padding:0px;padding-left:10px;vertical-align:middle !important;border-right:1px solid #ccc;overflow-x:hidden;}
+#menu_main h3{padding-left:0px;font-size:20px;font-weight:800 !important;line-height:20px !important;}
+#menu_main li{padding-left:0px;}
+#menu_main li a{width:100%;display:block;color:#333;}
+#menu_main li a:hover{background-color:#ccc;text-decoration:none;}
+}
+@media (max-width:992px){#page{padding:10px;}
+.container{margin:0px;padding:0px;}
+.row{margin:0px;padding:0px;}
+.row > div{margin:0px;padding:0px;}
+#logo_menu{display:none;}
+#menu_main{width:100%;}
+#menu_main h3{width:100%;text-align:center;}
+#menu_main li{width:100%;text-align:center;}
+#menu_main li a{width:100%;text-align:center;padding:2px;display:block;-webkit-transition-property:background-color;-webkit-transition-duration:0.5;-moz-transition-property:background-color;-moz-transition-duration:0.5s;transition-property:background-color;transition-duration:0.5s;width:100%;text-align:center;display:block;padding:6px;background-color:#f8f8f8;border:1px solid #ccc;font-size:1.2em;color:#111;text-decoration:none;margin:-1px 0px 0px -1px;}
+}
+@media (min-width:600px) and (max-width:800px){.row > div{width:50%;float:left;}
+}
+@media (min-width:800px) and (max-width:1000px){.row > div{width:33%;float:left;}
+}
+@media (min-width:992px){.row{width:100%;margin:0px;padding:0px;}
+}
+@media (max-width:992px){#menu_main{height:auto;}
+}
+.breadcrumb{padding:6px 6px;background-color:white !important;}
+.breadcrumb-list{padding-top:15px;padding-bottom:5px;}
+#category_menu{width:100%;max-width:500px;margin:auto;margin-top:40px;}
+#category_menu li{width:100%;}
+#category_menu a{-webkit-transition-property:background-color;-webkit-transition-duration:0.5;-moz-transition-property:background-color;-moz-transition-duration:0.5s;transition-property:background-color;transition-duration:0.5s;width:100%;text-align:center;display:block;padding:6px;background-color:#f8f8f8;border:1px solid #ccc;font-size:1.2em;color:#111;text-decoration:none;margin:-1px 0px 0px -1px;}
+#category_menu a:hover{background-color:white;}
+#pub_right{display:none;text-align:right;}
+@media (min-width:1100px) and (max-width:1500px){
+#pub_right{display:block;width:160px;position:fixed;top:0px;right:0px;}
+}
+@media (min-width:1500px){
+#pub_right{display:block;width:300px;position:fixed;top:0px;right:0px;}
+}
+@media (min-width:1100px){#page{max-width:700px;}
+}
+@media (min-width:1150px){#page{max-width:750px;}
+}
+@media (min-width:1200px){#page{max-width:800px;}
+}
+@media (min-width:1250px){#page{max-width:850px;}
+}
+@media (min-width:1300px){#page{max-width:900px;}
+}
+@media (min-width:1350px){#page{max-width:950px;}
+}
+@media (min-width:1400px){#page{max-width:1000px;}
+}
+@media (min-width:1450px){#page{max-width:1050px;}
+}
+@media (min-width:1500px){#page{max-width:950px;}
+}
+@media (min-width:1550px){#page{max-width:1000px;}
+}
+@media (min-width:1600px){#page{max-width:1050px;}
+}
+@media (min-width:1650px){#page{max-width:1100px;}
+}
+@media (min-width:1700px){#page{max-width:1150px;}
+}
+@media (min-width:1750px){#page{max-width:1200px;}
+}
+@media (max-width:500px){#h1-title-programmation-cours{text-align:center;}
+#python-programmation-logo{float:none;margin:auto;margin-bottom:30px;}
+}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+pre{display:block;padding:9.5px;margin:0 0 10px;font-size:14px;line-height:1.42857143;word-break:break-all;word-wrap:break-word;color:#333;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px;}
+pre{margin-top:20px;margin-bottom:20px;}
+pre{border:none;border-radius:0px;background-color:#efefef;}
+pre {-moz-tab-size: 3 !important;  -o-tab-size: 3 !important;  tab-size: 3 !important; }
+img { vertical-align: middle; }
+
+@media (max-width: 1000px) {
+footer{text-align:center; }
+}
+
+
+
+#menu_top_container {
+display:none;
+position: absolute;
+z-index: 99;
+width: 100%;
+background-color: #0C4B33 !important;
+text-align: center;
+top: 0px;
+}
+
+#menu_top a {
+position: relative;
+display: inline-block;
+padding: 2px 15px;
+font-size: 1.8em;
+margin-top: 0px;
+float: left;
+height: 100%;
+color: white;
+font-weight: bold;
+}
+
+@media (max-width: 375px) {
+#menu_top a {
+padding: 2px 8px;
+}
+}
+@media (max-width: 300px) {
+#menu_top a {
+padding: 2px 5px;
+}
+}
+@media (max-width: 259px) {
+#menu_top a {
+padding: 2px 1px;
+}
+}
+
+form[action="/page-contact"] input,
+form[action="/page-contact"] textarea
+{
+padding:10px;
+border:1px solid #eee;
+outline:none;
+margin:4px auto;
+}
+
+a:hover{ text-decoration: none !important; }
+
+
+@media (max-width: 992px) {
+
+#menu_main{ padding:0px; }
+#page{ margin-top:30px; }
+#menu_top_container{ display: block; }
+}
+
+strong{
+color: #445580 !important;
+background-color: rgba(232, 227, 227, 0.33) !important;
+font-weight:500 !important;
+}
+
+p.legende {
+font-weight: normal !important;
+font-size:0.9em;
+}
+
+.python_books_title{
+font-weight:bold;
+}
+.python_books > div{
+border:1px dashed #EEE;
+text-align:center;
+background-color: #E8E8E8;
+padding:10px;
+margin-bottom:20px;
+}
+
+.form_send_mail input,   
+.form_send_mail textarea {
+padding:5px;  
+margin-top:2px;
+}
+
+.form_send_textarea {
+min-height:200px;
+}
+
+
+/* navigation mobile */
+@media (max-width: 500px) {
+    .links_top > div{
+        padding-bottom:10px;
+    }
+    
+}
+    </style></head><body><div id=menu_top_container><div id=menu_top><a href=/ ><i class="fa fa-home"></i></a><a href=./page-cours-python-debutant-documentation title=Python><img src=/images/logo_python.png></a><a href=./page-cours-python-avance-documentation-francaise title="Python avancé"><img src=/images/logo_python_best.png></a><a href=./page-django-cours-tutoriels-documentation-francaise title="Python Django"><img src=/images/logo_django.png></a><a href=./page-raspberry-pi-apprendre-debutant-acheter-python title="Python Raspberry pi"><img src=/images/logo_raspberry.png style=margin-right:0px;padding-right:0px;></a><a href=# onclick="go_to_menu();return false;" style=float:right;margin-left:0px;padding-left:0px;><i class="glyphicon glyphicon-align-justify"></i></a></div></div><div id=pub_right style=text-align:center;></div><div id=page><h1> Interface graphique Tkinter python </h1><!-- breadcrumb --><div class=breadcrumb-list xmlns:v=http://rdf.data-vocabulary.org/#><span class=breadcrumb typeof=v:Breadcrumb><a href=./ property=v:title rel=v:url> Accueil </a></span><span class=chevron> › </span><span class=breadcrumb typeof=v:Breadcrumb><a href=./page-cours-python-avance-documentation-francaise property=v:title rel=v:url title="Voir tous les articles de cette catégorie"> Python avancé </a></span><span class=chevron> › </span><span class=breadcrumb-current><a href=./page-tkinter-interface-graphique-python-tutoriel style=line-height:2.1em;> Interface graphique Tkinter python </a></span></div><div class=links_top><div class=links_top_back><a href=./page-gestion-fichiers-dossiers-python><i class="glyphicon glyphicon-chevron-left"></i> Gestion fichiers et dossiers </a></div><div class=links_top_next><a href=./page-creer-graphiques-scientifiques-python-apprendre> Graphiques scientifiques <i class="glyphicon glyphicon-chevron-right"></i></a></div></div><p><strong> Tkinter </strong> est un module de base intégré dans <strong> Python </strong> , normalement vous n'avez rien à faire pour pouvoir l'utiliser. L'un des avantages de <strong> Tkinter </strong> est sa portabilité sur les OS les plus utilisés par le grand public. </p><h2> Installer Tkinter </h2><p> Tkinter est installé par défaut, si ce n'est pas le cas, lancez la commande suivante: </p><pre class>sudo apt-get install python-tk
+</pre><p> En python 3: </p><pre class>sudo apt-get install python3-tk
+</pre><h2> Python 2, python 3 </h2><p> Les modules ne sont pas les mêmes suivant votre version de python. Si le message suivant apparaît lors de l'exécution de votre script: </p><pre>ImportError: No module named 'Tkinter'
+</pre><p> C'est que le module appelé n'est pas le bon par rapport à votre version python. </p><pre><strong>Python 2</strong>             <strong>Python 3</strong>
+Tkinter         →  tkinter
+Tix             →  tkinter.tix
+ttk             →  tkinter.ttk
+tkMessageBox    →  tkinter.messagebox
+tkColorChooser  →  tkinter.colorchooser
+tkFileDialog    →  tkinter.filedialog
+tkCommonDialog  →  tkinter.commondialog
+tkSimpleDialog  →  tkinter.simpledialog
+tkFont          →  tkinter.font
+Tkdnd           →  tkinter.dnd
+ScrolledText    →  tkinter.scrolledtext
+</pre><h2> Hello world </h2><p> Voici le code de votre premier <strong> hello world </strong></p><pre><span class=c1># coding: utf-8</span>
+ 
+<span class=kn>from</span> <span class=nn>tkinter</span> <span class=kn>import</span> <span class=o>*</span> 
+
+<span class=n>fenetre</span> <span class=o>=</span> <span class=n>Tk</span><span class=p>()</span>
+
+<span class=n>label</span> <span class=o>=</span> <span class=n>Label</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Hello World"</span><span class=p>)</span>
+<span class=n>label</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+
+<span class=n>fenetre</span><span class=o>.</span><span class=n>mainloop</span><span class=p>()</span>
+</pre><p> Une fenêtre comme celle-ci devrait apparaître: </p><p class=center><img class=shadow-bordered src=./images/hello-world.png></p><h2> Les widget Tkinter </h2><p> Pour créer un logiciel graphique vous devez ajouter dans une fenêtre des éléments graphiques que l'on nomme widget. Ce widget peut être tout aussi bien une liste déroulante que du texte. </p><h2> Les boutons </h2><p> Les boutons permettent de proposer une action à l'utilisateur. Dans l'exemple ci-dessous, on lui propose de fermer la fenêtre. </p><pre><span class=c1># bouton de sortie</span>
+<span class=n>bouton</span><span class=o>=</span><span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Fermer"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>fenetre</span><span class=o>.</span><span class=n>quit</span><span class=p>)</span>
+<span class=n>bouton</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-button.png></p><h2> Les labels </h2><p> Les labels sont des espaces prévus pour écrire du texte. Les labels servent souvent à décrire un widget comme un input </p><pre><span class=c1># label</span>
+<span class=n>label</span> <span class=o>=</span> <span class=n>Label</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Texte par défaut"</span><span class=p>,</span> <span class=n>bg</span><span class=o>=</span><span class=s2>"yellow"</span><span class=p>)</span>
+<span class=n>label</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-label.png></p><h2> Entrée / input </h2><pre><span class=c1># entrée</span>
+<span class=n>value</span> <span class=o>=</span> <span class=n>StringVar</span><span class=p>()</span> 
+<span class=n>value</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>"texte par défaut"</span><span class=p>)</span>
+<span class=n>entree</span> <span class=o>=</span> <span class=n>Entry</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>textvariable</span><span class=o>=</span><span class=n>string</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>30</span><span class=p>)</span>
+<span class=n>entree</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-input.png></p><h2> Case à cocher </h2><p> Les checkbox proposent à l'utilisateur de cocher une option. </p><pre><span class=c1># checkbutton</span>
+<span class=n>bouton</span> <span class=o>=</span> <span class=n>Checkbutton</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Nouveau?"</span><span class=p>)</span>
+<span class=n>bouton</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-checkbox.png></p><h2> Boutons radio </h2><p> Les boutons radio sont des cases à cocher qui sont dans un groupe et dans ce groupe seul un élément peut être sélectionné. </p><pre><span class=c1># radiobutton</span>
+<span class=n>value</span> <span class=o>=</span> <span class=n>StringVar</span><span class=p>()</span> 
+<span class=n>bouton1</span> <span class=o>=</span> <span class=n>Radiobutton</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Oui"</span><span class=p>,</span> <span class=n>variable</span><span class=o>=</span><span class=n>value</span><span class=p>,</span> <span class=n>value</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+<span class=n>bouton2</span> <span class=o>=</span> <span class=n>Radiobutton</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Non"</span><span class=p>,</span> <span class=n>variable</span><span class=o>=</span><span class=n>value</span><span class=p>,</span> <span class=n>value</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
+<span class=n>bouton3</span> <span class=o>=</span> <span class=n>Radiobutton</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Peu être"</span><span class=p>,</span> <span class=n>variable</span><span class=o>=</span><span class=n>value</span><span class=p>,</span> <span class=n>value</span><span class=o>=</span><span class=mi>3</span><span class=p>)</span>
+<span class=n>bouton1</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>bouton2</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>bouton3</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><h2> Les listes </h2><p> Les listes permettent de récupérer une valeur sélectionnée par l'utilisateur. </p><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-list.png></p><pre><span class=c1># liste</span>
+<span class=n>liste</span> <span class=o>=</span> <span class=n>Listbox</span><span class=p>(</span><span class=n>fenetre</span><span class=p>)</span>
+<span class=n>liste</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=s2>"Python"</span><span class=p>)</span>
+<span class=n>liste</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=s2>"PHP"</span><span class=p>)</span>
+<span class=n>liste</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=mi>3</span><span class=p>,</span> <span class=s2>"jQuery"</span><span class=p>)</span>
+<span class=n>liste</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=mi>4</span><span class=p>,</span> <span class=s2>"CSS"</span><span class=p>)</span>
+<span class=n>liste</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=s2>"Javascript"</span><span class=p>)</span>
+
+<span class=n>liste</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><h2> Canvas </h2><p> Un canvas (toile, tableau en français) est un espace dans lequel vous pouvez dessiner ou écrire ce que vous voulez: </p><pre><span class=c1># canvas</span>
+<span class=n>canvas</span> <span class=o>=</span> <span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>150</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>120</span><span class=p>,</span> <span class=n>background</span><span class=o>=</span><span class=s1>'yellow'</span><span class=p>)</span>
+<span class=n>ligne1</span> <span class=o>=</span> <span class=n>canvas</span><span class=o>.</span><span class=n>create_line</span><span class=p>(</span><span class=mi>75</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>75</span><span class=p>,</span> <span class=mi>120</span><span class=p>)</span>
+<span class=n>ligne2</span> <span class=o>=</span> <span class=n>canvas</span><span class=o>.</span><span class=n>create_line</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>60</span><span class=p>,</span> <span class=mi>150</span><span class=p>,</span> <span class=mi>60</span><span class=p>)</span>
+<span class=n>txt</span> <span class=o>=</span> <span class=n>canvas</span><span class=o>.</span><span class=n>create_text</span><span class=p>(</span><span class=mi>75</span><span class=p>,</span> <span class=mi>60</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Cible"</span><span class=p>,</span> <span class=n>font</span><span class=o>=</span><span class=s2>"Arial 16 italic"</span><span class=p>,</span> <span class=n>fill</span><span class=o>=</span><span class=s2>"blue"</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class=shadow-bordered src=./images/tkinter-canvas.png></p><p> Vous pouvez créer d'autres éléments: </p><pre><span class=n>create_arc</span><span class=p>()</span>        <span class=p>:</span>  <span class=n>arc</span> <span class=n>de</span> <span class=n>cercle</span>
+<span class=n>create_bitmap</span><span class=p>()</span>     <span class=p>:</span>  <span class=n>bitmap</span>
+<span class=n>create_image</span><span class=p>()</span>      <span class=p>:</span>  <span class=n>image</span>
+<span class=n>create_line</span><span class=p>()</span>       <span class=p>:</span>  <span class=n>ligne</span>
+<span class=n>create_oval</span><span class=p>()</span>       <span class=p>:</span>  <span class=n>ovale</span>
+<span class=n>create_polygon</span><span class=p>()</span>    <span class=p>:</span>  <span class=n>polygone</span>
+<span class=n>create_rectangle</span><span class=p>()</span>  <span class=p>:</span>  <span class=n>rectangle</span> 
+<span class=n>create_text</span><span class=p>()</span>       <span class=p>:</span>  <span class=n>texte</span>
+<span class=n>create_window</span><span class=p>()</span>     <span class=p>:</span>  <span class=n>fenetre</span>
+</pre><p> Si vous voulez changer les coordonnées d'un élement crée dans le canevas, vous pouvez utiliser la méthode <strong> coords </strong> . </p><pre>canvas.coords(élément, x0, y0, x1, y1)
+</pre><p> Pour supprimer un élément vous pouvez utiliser la méthode <strong> delete </strong></p><pre>canvas.delete(élément)
+</pre><p> Vous pouvez trouver d'autres méthodes utiles en exécutant l'instruction suivante: </p><pre><span class=nb>print</span> <span class=nb>dir</span><span class=p>(</span><span class=n>Canvas</span><span class=p>())</span>
+</pre><p> ou visitez la page suivante <a href=http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/canvas-methods.html target=_blank> infohost </a></p><h2> Scale </h2><p> Le widget scale permet de récupérer une valeur numérique via un scroll </p><pre><span class=n>value</span> <span class=o>=</span> <span class=n>DoubleVar</span><span class=p>()</span>
+<span class=n>scale</span> <span class=o>=</span> <span class=n>Scale</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>variable</span><span class=o>=</span><span class=n>value</span><span class=p>)</span>
+<span class=n>scale</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-scale.png></p><h2> Frames </h2><p> Les frames (cadres) sont des conteneurs qui permettent de séparer des éléments. </p><pre><span class=n>fenetre</span><span class=p>[</span><span class=s1>'bg'</span><span class=p>]</span><span class=o>=</span><span class=s1>'white'</span>
+
+<span class=c1># frame 1</span>
+<span class=n>Frame1</span> <span class=o>=</span> <span class=n>Frame</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>GROOVE</span><span class=p>)</span>
+<span class=n>Frame1</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>LEFT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>30</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>30</span><span class=p>)</span>
+
+<span class=c1># frame 2</span>
+<span class=n>Frame2</span> <span class=o>=</span> <span class=n>Frame</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>GROOVE</span><span class=p>)</span>
+<span class=n>Frame2</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>LEFT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+
+<span class=c1># frame 3 dans frame 2</span>
+<span class=n>Frame3</span> <span class=o>=</span> <span class=n>Frame</span><span class=p>(</span><span class=n>Frame2</span><span class=p>,</span> <span class=n>bg</span><span class=o>=</span><span class=s2>"white"</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>GROOVE</span><span class=p>)</span>
+<span class=n>Frame3</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>RIGHT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+
+<span class=c1># Ajout de labels</span>
+<span class=n>Label</span><span class=p>(</span><span class=n>Frame1</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Frame 1"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>padx</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+<span class=n>Label</span><span class=p>(</span><span class=n>Frame2</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Frame 2"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>padx</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+<span class=n>Label</span><span class=p>(</span><span class=n>Frame3</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Frame 3"</span><span class=p>,</span><span class=n>bg</span><span class=o>=</span><span class=s2>"white"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>padx</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-frame.png></p><h2> PanedWindow </h2><p> Le <strong> panedwindow </strong> est un conteneur qui peut contenir autant de panneaux que nécessaire disposé horizontalement ou verticalement. </p><pre><span class=n>p</span> <span class=o>=</span> <span class=n>PanedWindow</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>orient</span><span class=o>=</span><span class=n>HORIZONTAL</span><span class=p>)</span>
+<span class=n>p</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>TOP</span><span class=p>,</span> <span class=n>expand</span><span class=o>=</span><span class=n>Y</span><span class=p>,</span> <span class=n>fill</span><span class=o>=</span><span class=n>BOTH</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
+<span class=n>p</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Label</span><span class=p>(</span><span class=n>p</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'Volet 1'</span><span class=p>,</span> <span class=n>background</span><span class=o>=</span><span class=s1>'blue'</span><span class=p>,</span> <span class=n>anchor</span><span class=o>=</span><span class=n>CENTER</span><span class=p>))</span>
+<span class=n>p</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Label</span><span class=p>(</span><span class=n>p</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'Volet 2'</span><span class=p>,</span> <span class=n>background</span><span class=o>=</span><span class=s1>'white'</span><span class=p>,</span> <span class=n>anchor</span><span class=o>=</span><span class=n>CENTER</span><span class=p>)</span> <span class=p>)</span>
+<span class=n>p</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Label</span><span class=p>(</span><span class=n>p</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'Volet 3'</span><span class=p>,</span> <span class=n>background</span><span class=o>=</span><span class=s1>'red'</span><span class=p>,</span> <span class=n>anchor</span><span class=o>=</span><span class=n>CENTER</span><span class=p>)</span> <span class=p>)</span>
+<span class=n>p</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-paned-window.png title="Version horizontale"><img class="shadow-bordered img-responsive" src=./images/tkinter-paned-window2.png title="Version verticale"></p><h2> Spinbox </h2><p> La <strong> spinbox </strong> propose à l'utilisateur de choisir un nombre </p><pre><span class=n>s</span> <span class=o>=</span> <span class=n>Spinbox</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>from_</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span> <span class=n>to</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+<span class=n>s</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-spinbox.png title="Version verticale"></p><h2> LabelFrame </h2><p> Le labelframe est un cadre avec un label. </p><pre><span class=n>l</span> <span class=o>=</span> <span class=n>LabelFrame</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Titre de la frame"</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>20</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>20</span><span class=p>)</span>
+<span class=n>l</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>fill</span><span class=o>=</span><span class=s2>"both"</span><span class=p>,</span> <span class=n>expand</span><span class=o>=</span><span class=s2>"yes"</span><span class=p>)</span>
+ 
+<span class=n>Label</span><span class=p>(</span><span class=n>l</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"A l'intérieure de la frame"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-labelframe.png title="Version verticale"></p><h2> Les alertes </h2><p> Pour pouvoir utiliser les alertes de votre os, vous pouvez importer le module <strong> tkMessageBox </strong> (Python 2). </p><pre><span class=kn>from</span> <span class=nn>tkMessageBox</span> <span class=kn>import</span> <span class=o>*</span>
+</pre><p> Pour python 3: </p><pre>from tkinter.messagebox import *
+</pre><p> Exemple d'utilisation: </p><pre><span class=k>def</span> <span class=nf>callback</span><span class=p>():</span>
+    <span class=k>if</span> <span class=n>askyesno</span><span class=p>(</span><span class=s1>'Titre 1'</span><span class=p>,</span> <span class=s1>'Êtes-vous sûr de vouloir faire ça?'</span><span class=p>):</span>
+        <span class=n>showwarning</span><span class=p>(</span><span class=s1>'Titre 2'</span><span class=p>,</span> <span class=s1>'Tant pis...'</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=n>showinfo</span><span class=p>(</span><span class=s1>'Titre 3'</span><span class=p>,</span> <span class=s1>'Vous avez peur!'</span><span class=p>)</span>
+        <span class=n>showerror</span><span class=p>(</span><span class=s2>"Titre 4"</span><span class=p>,</span> <span class=s2>"Aha"</span><span class=p>)</span>
+
+<span class=n>Button</span><span class=p>(</span><span class=n>text</span><span class=o>=</span><span class=s1>'Action'</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>callback</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class=img-responsive src=./images/tkinter-dialog.png title="Version verticale"></p><p> Voici les alertes possibles: </p><pre>showinfo()
+showwarning()
+showerror()
+askquestion()
+askokcancel()
+askyesno()
+askretrycancel()
+</pre><h2> Barre de menu </h2><p> Il est possible de créer une barre de menu comme-ceci: </p><pre><span class=k>def</span> <span class=nf>alert</span><span class=p>():</span>
+    <span class=n>showinfo</span><span class=p>(</span><span class=s2>"alerte"</span><span class=p>,</span> <span class=s2>"Bravo!"</span><span class=p>)</span>
+
+<span class=n>menubar</span> <span class=o>=</span> <span class=n>Menu</span><span class=p>(</span><span class=n>fenetre</span><span class=p>)</span>
+
+<span class=n>menu1</span> <span class=o>=</span> <span class=n>Menu</span><span class=p>(</span><span class=n>menubar</span><span class=p>,</span> <span class=n>tearoff</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+<span class=n>menu1</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Créer"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menu1</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Editer"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menu1</span><span class=o>.</span><span class=n>add_separator</span><span class=p>()</span>
+<span class=n>menu1</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Quitter"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>fenetre</span><span class=o>.</span><span class=n>quit</span><span class=p>)</span>
+<span class=n>menubar</span><span class=o>.</span><span class=n>add_cascade</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Fichier"</span><span class=p>,</span> <span class=n>menu</span><span class=o>=</span><span class=n>menu1</span><span class=p>)</span>
+
+<span class=n>menu2</span> <span class=o>=</span> <span class=n>Menu</span><span class=p>(</span><span class=n>menubar</span><span class=p>,</span> <span class=n>tearoff</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+<span class=n>menu2</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Couper"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menu2</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Copier"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menu2</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Coller"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menubar</span><span class=o>.</span><span class=n>add_cascade</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Editer"</span><span class=p>,</span> <span class=n>menu</span><span class=o>=</span><span class=n>menu2</span><span class=p>)</span>
+
+<span class=n>menu3</span> <span class=o>=</span> <span class=n>Menu</span><span class=p>(</span><span class=n>menubar</span><span class=p>,</span> <span class=n>tearoff</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+<span class=n>menu3</span><span class=o>.</span><span class=n>add_command</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"A propos"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>alert</span><span class=p>)</span>
+<span class=n>menubar</span><span class=o>.</span><span class=n>add_cascade</span><span class=p>(</span><span class=n>label</span><span class=o>=</span><span class=s2>"Aide"</span><span class=p>,</span> <span class=n>menu</span><span class=o>=</span><span class=n>menu3</span><span class=p>)</span>
+
+<span class=n>fenetre</span><span class=o>.</span><span class=n>config</span><span class=p>(</span><span class=n>menu</span><span class=o>=</span><span class=n>menubar</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-menu.png title="Version verticale"></p><hr><h2> Connaitre toutes les méthodes / options d'un widget </h2><p> Pour cela il vous suffit d'exécuter la ligne suivante: </p><pre class=cdoe>print dir(Button())
+</pre><h2> Les attributs standards </h2><p> Il est possible de changer la valeur d'attributs présents sur les widgets </p><h2> Placer des widgets </h2><p> Il est possible de placer les widgets à l'aide du paramètre <strong> side </strong> : </p><pre><span class=n>side</span><span class=o>=</span><span class=n>TOP</span>     <span class=p>:</span>  <span class=n>haut</span>
+<span class=n>side</span><span class=o>=</span><span class=n>LEFT</span>    <span class=p>:</span>  <span class=n>gauche</span>
+<span class=n>side</span><span class=o>=</span><span class=n>BOTTOM</span>  <span class=p>:</span>  <span class=n>bas</span>
+<span class=n>side</span><span class=o>=</span><span class=n>RIGHT</span>   <span class=p>:</span>  <span class=n>droite</span>
+</pre><p> Exemple: </p><pre><span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>250</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>100</span><span class=p>,</span> <span class=n>bg</span><span class=o>=</span><span class=s1>'ivory'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>TOP</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s1>'Bouton 1'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>LEFT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s1>'Bouton 2'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>RIGHT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-side.png title="Version verticale"></p><p> Autre exemple: </p><pre><span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>250</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>50</span><span class=p>,</span> <span class=n>bg</span><span class=o>=</span><span class=s1>'ivory'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>LEFT</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s1>'Bouton 1'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>TOP</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s1>'Bouton 2'</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>side</span><span class=o>=</span><span class=n>BOTTOM</span><span class=p>,</span> <span class=n>padx</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>5</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-side-bottom.png title="Version verticale"></p><h2> Les unités de dimensions </h2><p> Si vous indiquez une dimension à travers un integer, l'unité utilisée sera les "pixels". Il est cependant possible de changer l'unité: </p><pre>i : pouces
+m : millimètre
+c : centimètre
+</pre><h2> Les options de dimensions </h2><pre><strong>height</strong>             : Hauteur du widget.
+<strong>width</strong>              : Largeur du widget.
+<strong>padx, pady</strong>         : Espace supplémentaire autour du widget. X pour horizontal et V pour vertical.
+<strong>borderwidth</strong>        : Taille de la bordure.
+<strong>highlightthickness</strong> : Largeur du rectangle lorsque le widget a le focus.
+<strong>selectborderwidth</strong>  : Largeur de la bordure tridimensionnel autour du widget sélectionné.
+<strong>wraplength</strong>         : Nombre de ligne maximum pour les widget en mode "word wrapping".
+</pre><h2> Les options de couleurs </h2><p> Il est possible d'indiquer une valeur de couleur par son nom en anglais: "white", "black", "red", "yellow", etc. ou par son code hexadécimale: #000000, #00FFFF, etc. </p><pre><strong>background (ou bg)</strong>   : couleur de fond du widget.
+<strong>foreground (ou fg)</strong>   : couleur de premier plan du widget.
+<strong>activebackground</strong>     : couleur de fond du widget lorsque celui-ci est actif. 
+<strong>activeForeground</strong>     : couleur de premier plan du widget lorsque le widget est actif. 
+<strong>disabledForeground</strong>   : couleur de premier plan du widget lorsque le widget est désactivé. 
+<strong>highlightbackground</strong>  : Couleur de fond de la région de surbrillance lorsque le widget a le focus. 
+<strong>highlightcolor</strong>       : couleur de premier plan de la région en surbrillance lorsque le widget a le focus. 
+<strong>selectbackground</strong>     : Couleur de fond pour les éléments sélectionnés. 
+<strong>selectforeground</strong>     : couleur de premier plan pour les éléments sélectionnés.
+</pre><h2> Le curseur </h2><p> Vous pouvez changer l'apparance de votre curseur: </p><pre><span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"arrow"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"arrow"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"circle"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"circle"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"clock"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"clock"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"cross"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"cross"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"dotbox"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"dotbox"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"exchange"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"exchange"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"fleur"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"fleur"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"heart"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"heart"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"man"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"man"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"mouse"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"mouse"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"pirate"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"pirate"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"plus"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"plus"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"shuttle"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"shuttle"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"sizing"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"sizing"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"spider"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"spider"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"spraycan"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"spraycan"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"star"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"star"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"target"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"target"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"tcross"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"tcross"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"trek"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"trek"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"watch"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>,</span> <span class=n>cursor</span><span class=o>=</span><span class=s2>"watch"</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><h2> Le relief </h2><p> Vous pouvez changer le relief sur vos éléments: </p><pre><span class=n>FLAT</span>
+<span class=n>RAISED</span>
+<span class=n>SUNKEN</span>
+<span class=n>GROOVE</span>
+<span class=n>RIDGE</span>
+</pre><pre><span class=n>b1</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"FLAT"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>FLAT</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>b2</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"RAISED"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RAISED</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>b3</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"SUNKEN"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>SUNKEN</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>b4</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"GROOVE"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>GROOVE</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+<span class=n>b5</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span> <span class=o>=</span><span class=s2>"RIDGE"</span><span class=p>,</span> <span class=n>relief</span><span class=o>=</span><span class=n>RIDGE</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-relief.png title="Version verticale"></p><h2> La grille </h2><p> Il est possible de placer les éléments en raisonnant en grille: </p><pre><span class=k>for</span> <span class=n>ligne</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+    <span class=k>for</span> <span class=n>colonne</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+        <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L</span><span class=si>%s</span><span class=s1>-C</span><span class=si>%s</span><span class=s1>'</span> <span class=o>%</span> <span class=p>(</span><span class=n>ligne</span><span class=p>,</span> <span class=n>colonne</span><span class=p>),</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=n>ligne</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=n>colonne</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-grid.png title="Version verticale"></p><pre><span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L1-C1'</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L1-C2'</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L2-C3'</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=mi>3</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L2-C4'</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=mi>2</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=mi>4</span><span class=p>)</span>
+<span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s1>'L3-C3'</span><span class=p>,</span> <span class=n>borderwidth</span><span class=o>=</span><span class=mi>1</span><span class=p>)</span><span class=o>.</span><span class=n>grid</span><span class=p>(</span><span class=n>row</span><span class=o>=</span><span class=mi>3</span><span class=p>,</span> <span class=n>column</span><span class=o>=</span><span class=mi>3</span><span class=p>)</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-grid-2.png title="Version verticale"></p><h2> Intégrer une image </h2><p> Pour intégrer une image vous pouvez créer un canevas et l'ajouter à l'intérieur comme ceci: </p><pre><span class=n>photo</span> <span class=o>=</span> <span class=n>PhotoImage</span><span class=p>(</span><span class=n>file</span><span class=o>=</span><span class=s2>"ma_photo.png"</span><span class=p>)</span>
+
+<span class=n>canvas</span> <span class=o>=</span> <span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span><span class=n>width</span><span class=o>=</span><span class=mi>350</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>200</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>create_image</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=n>anchor</span><span class=o>=</span><span class=n>NW</span><span class=p>,</span> <span class=n>image</span><span class=o>=</span><span class=n>photo</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-image.png title="Version verticale"></p><h2> Récupérer la valeur d'un input </h2><p> Pour récupérer la valeur d'un input il vous faudra utiliser la méthode <strong> get() </strong> : </p><pre><span class=k>def</span> <span class=nf>recupere</span><span class=p>():</span>
+    <span class=n>showinfo</span><span class=p>(</span><span class=s2>"Alerte"</span><span class=p>,</span> <span class=n>entree</span><span class=o>.</span><span class=n>get</span><span class=p>())</span>
+
+<span class=n>value</span> <span class=o>=</span> <span class=n>StringVar</span><span class=p>()</span> 
+<span class=n>value</span><span class=o>.</span><span class=n>set</span><span class=p>(</span><span class=s2>"Valeur"</span><span class=p>)</span>
+<span class=n>entree</span> <span class=o>=</span> <span class=n>Entry</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>textvariable</span><span class=o>=</span><span class=n>value</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>30</span><span class=p>)</span>
+<span class=n>entree</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+
+<span class=n>bouton</span> <span class=o>=</span> <span class=n>Button</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=s2>"Valider"</span><span class=p>,</span> <span class=n>command</span><span class=o>=</span><span class=n>recupere</span><span class=p>)</span>
+<span class=n>bouton</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><h2> Récupérer une image et l'afficher </h2><p> Pour cela, vous devez importer le module suivant: </p><pre><span class=kn>from</span> <span class=nn>tkinter.filedialog</span> <span class=kn>import</span> <span class=o>*</span>
+</pre><pre><span class=n>filepath</span> <span class=o>=</span> <span class=n>askopenfilename</span><span class=p>(</span><span class=n>title</span><span class=o>=</span><span class=s2>"Ouvrir une image"</span><span class=p>,</span><span class=n>filetypes</span><span class=o>=</span><span class=p>[(</span><span class=s1>'png files'</span><span class=p>,</span><span class=s1>'.png'</span><span class=p>),(</span><span class=s1>'all files'</span><span class=p>,</span><span class=s1>'.*'</span><span class=p>)])</span>
+<span class=n>photo</span> <span class=o>=</span> <span class=n>PhotoImage</span><span class=p>(</span><span class=n>file</span><span class=o>=</span><span class=n>filepath</span><span class=p>)</span>
+<span class=n>canvas</span> <span class=o>=</span> <span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=n>photo</span><span class=o>.</span><span class=n>width</span><span class=p>(),</span> <span class=n>height</span><span class=o>=</span><span class=n>photo</span><span class=o>.</span><span class=n>height</span><span class=p>(),</span> <span class=n>bg</span><span class=o>=</span><span class=s2>"yellow"</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>create_image</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=n>anchor</span><span class=o>=</span><span class=n>NW</span><span class=p>,</span> <span class=n>image</span><span class=o>=</span><span class=n>photo</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p class=center><img class="shadow-bordered img-responsive" src=./images/tkinter-open-file.png title="Version verticale"></p><p> La fonction <strong> askopenfilename </strong> retourne le chemin du fichier que vous avez choisi avec le nom de celui-ci. </p><p> Exemple: <strong> /home/olivier/ma_photo.png </strong></p><h2> Récupérer un fichier texte et l'afficher </h2><pre><span class=n>filename</span> <span class=o>=</span> <span class=n>askopenfilename</span><span class=p>(</span><span class=n>title</span><span class=o>=</span><span class=s2>"Ouvrir votre document"</span><span class=p>,</span><span class=n>filetypes</span><span class=o>=</span><span class=p>[(</span><span class=s1>'txt files'</span><span class=p>,</span><span class=s1>'.txt'</span><span class=p>),(</span><span class=s1>'all files'</span><span class=p>,</span><span class=s1>'.*'</span><span class=p>)])</span>
+<span class=n>fichier</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>filename</span><span class=p>,</span> <span class=s2>"r"</span><span class=p>)</span>
+<span class=n>content</span> <span class=o>=</span> <span class=n>fichier</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+<span class=n>fichier</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+
+<span class=n>Label</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>text</span><span class=o>=</span><span class=n>content</span><span class=p>)</span><span class=o>.</span><span class=n>pack</span><span class=p>(</span><span class=n>padx</span><span class=o>=</span><span class=mi>10</span><span class=p>,</span> <span class=n>pady</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
+</pre><h2> Les évènements </h2><p> Vous pouvez récupérer les actions utilisateurs à travers les <strong> events </strong> (évènement en français). </p><p> Pour chaque widget, vous pouvez <i> binder </i> (lier en français) un évènement, par exemple dire lorsque l'utilisateur appuie sur telle touche, faire cela. </p><p> Voici un exemple qui récupère les touches appuyées par l'utilisateur: </p><pre><span class=k>def</span> <span class=nf>clavier</span><span class=p>(</span><span class=n>event</span><span class=p>):</span>
+    <span class=n>touche</span> <span class=o>=</span> <span class=n>event</span><span class=o>.</span><span class=n>keysym</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>touche</span><span class=p>)</span>
+
+<span class=n>canvas</span> <span class=o>=</span> <span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>500</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>500</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>focus_set</span><span class=p>()</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>bind</span><span class=p>(</span><span class=s2>"&lt;Key&gt;"</span><span class=p>,</span> <span class=n>clavier</span><span class=p>)</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><p> On remarque que l' <u> évènement est encadré par des chevrons </u> . </p><p> D'autres évènements existent: </p><pre class>&lt;Button-1&gt;           : Click gauche
+&lt;Button-2&gt;           : Click milieu 
+&lt;Button-3&gt;           : Click droit
+&lt;Double-Button-1&gt;    : Double click droit
+&lt;Double-Button-2&gt;    : Double click gauche
+&lt;KeyPress&gt;           : Pression sur une touche
+&lt;KeyPress-a&gt;         : Pression sur la touche <strong>A</strong> (minuscule)
+&lt;KeyPress-A&gt;         : Pression sur la touche <strong>A</strong> (majuscule)
+&lt;Return&gt;             : Pression sur la touche entrée
+&lt;Escape&gt;             : Touche Echap
+&lt;Up&gt;                 : Pression sur la flèche directionnelle haut
+&lt;Down&gt;               : Pression sur la flèche directionnelle bas
+&lt;ButtonRelease&gt;      : Lorsque qu'on relache le click
+&lt;Motion&gt;             : Mouvement de la souris
+&lt;B1-Motion&gt;          : Mouvement de la souris avec click gauche
+&lt;Enter&gt;              : Entrée du curseur dans un widget
+&lt;Leave&gt;              : Sortie du curseur dans un widget
+&lt;Configure&gt;          : Redimensionnement de la fenêtre
+&lt;Map&gt; &lt;Unmap&gt;        : Ouverture et iconification de la fenêtre
+&lt;MouseWheel&gt;         : Utilisation de la roulette
+</pre><p> Pour supprimer la liasion de l'évènement vous pouvez utiliser les méthodes <strong> unbind </strong> ou <strong> unbind_all </strong> . </p><p> Voici un exemple où l'on peut bouger un carré avec les touches directionnelles: </p><pre><span class=c1># fonction appellée lorsque l'utilisateur presse une touche</span>
+<span class=k>def</span> <span class=nf>clavier</span><span class=p>(</span><span class=n>event</span><span class=p>):</span>
+    <span class=k>global</span> <span class=n>coords</span>
+
+    <span class=n>touche</span> <span class=o>=</span> <span class=n>event</span><span class=o>.</span><span class=n>keysym</span>
+
+    <span class=k>if</span> <span class=n>touche</span> <span class=o>==</span> <span class=s2>"Up"</span><span class=p>:</span>
+        <span class=n>coords</span> <span class=o>=</span> <span class=p>(</span><span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>-</span> <span class=mi>10</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>touche</span> <span class=o>==</span> <span class=s2>"Down"</span><span class=p>:</span>
+        <span class=n>coords</span> <span class=o>=</span> <span class=p>(</span><span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>+</span> <span class=mi>10</span><span class=p>)</span>
+    <span class=k>elif</span> <span class=n>touche</span> <span class=o>==</span> <span class=s2>"Right"</span><span class=p>:</span>
+        <span class=n>coords</span> <span class=o>=</span> <span class=p>(</span><span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>+</span> <span class=mi>10</span><span class=p>,</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>])</span>
+    <span class=k>elif</span> <span class=n>touche</span> <span class=o>==</span> <span class=s2>"Left"</span><span class=p>:</span>
+        <span class=n>coords</span> <span class=o>=</span> <span class=p>(</span><span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>-</span><span class=mi>10</span><span class=p>,</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>])</span>
+    <span class=c1># changement de coordonnées pour le rectangle</span>
+    <span class=n>canvas</span><span class=o>.</span><span class=n>coords</span><span class=p>(</span><span class=n>rectangle</span><span class=p>,</span> <span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>coords</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>+</span><span class=mi>25</span><span class=p>,</span> <span class=n>coords</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span><span class=o>+</span><span class=mi>25</span><span class=p>)</span>
+
+<span class=c1># création du canvas</span>
+<span class=n>canvas</span> <span class=o>=</span> <span class=n>Canvas</span><span class=p>(</span><span class=n>fenetre</span><span class=p>,</span> <span class=n>width</span><span class=o>=</span><span class=mi>250</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>250</span><span class=p>,</span> <span class=n>bg</span><span class=o>=</span><span class=s2>"ivory"</span><span class=p>)</span>
+<span class=c1># coordonnées initiales</span>
+<span class=n>coords</span> <span class=o>=</span> <span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+<span class=c1># création du rectangle</span>
+<span class=n>rectangle</span> <span class=o>=</span> <span class=n>canvas</span><span class=o>.</span><span class=n>create_rectangle</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>,</span><span class=mi>25</span><span class=p>,</span><span class=mi>25</span><span class=p>,</span><span class=n>fill</span><span class=o>=</span><span class=s2>"violet"</span><span class=p>)</span>
+<span class=c1># ajout du bond sur les touches du clavier</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>focus_set</span><span class=p>()</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>bind</span><span class=p>(</span><span class=s2>"&lt;Key&gt;"</span><span class=p>,</span> <span class=n>clavier</span><span class=p>)</span>
+<span class=c1># création du canvas</span>
+<span class=n>canvas</span><span class=o>.</span><span class=n>pack</span><span class=p>()</span>
+</pre><hr><p> Conseils de lecture pour <strong> tkinter </strong> : </p><a href=http://fsincere.free.fr/isn/python/cours_python_tkinter.php target=_blank> fsincere </a> - <a href="https://www.tutorialspoint.com/python/python_gui_programming.htm" target=_blank> tutorialspoint </a> - <a href=http://www.jchr.be/python/tkinter.htm target=_blank> jchr.be </a> - <a href="http://python.developpez.com/cours/TutoSwinnen/?page=Chapitre8" target=_blank> developpez </a> - <a href=http://sebsauvage.net/python/gui/index_fr.html target=_blank> sebsauvage </a><hr style="margin-top:30px;margin-bottom: 10px"><p class=python_books_title> Livres Python &amp; Django: conseils de lecture </p><div class=python_books><div class="col-md-4 col-lg-4"><a href="https://www.amazon.fr/gp/product/2746071711/ref=as_li_tl?ie=UTF8&camp=1642&creative=6746&creativeASIN=2746071711&linkCode=as2&tag=pythondjango-21&linkId=bdf2387af4f5ebddbf6a49ab0369c185" target=_blank><img border=0 src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=FR&ASIN=2746071711&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=pythondjango-21"></a><img alt border=0 height=1 src="//ir-fr.amazon-adsystem.com/e/ir?t=pythondjango-21&l=am2&o=8&a=2746071711" style="border:none !important; margin:0px !important;" width=1></div><div class="col-md-4 col-lg-4"><a href="https://www.amazon.fr/gp/product/1797866478/ref=as_li_tl?ie=UTF8&camp=1642&creative=6746&creativeASIN=1797866478&linkCode=as2&tag=pythondjango-21&linkId=1bbb9230ff46b465218bd107d69482d5" target=_blank><img border=0 src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=FR&ASIN=1797866478&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=pythondjango-21"></a><img alt border=0 height=1 src="//ir-fr.amazon-adsystem.com/e/ir?t=pythondjango-21&l=am2&o=8&a=1797866478" style="border:none !important; margin:0px !important;" width=1></div><div class="col-md-4 col-lg-4"><a href="https://www.amazon.fr/gp/product/2409012264/ref=as_li_tl?ie=UTF8&camp=1642&creative=6746&creativeASIN=2409012264&linkCode=as2&tag=pythondjango-21&linkId=635e1fd05fa3fa8a13d66632af388dd8" target=_blank><img border=0 src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=FR&ASIN=2409012264&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=pythondjango-21"></a><img alt border=0 height=1 src="//ir-fr.amazon-adsystem.com/e/ir?t=pythondjango-21&l=am2&o=8&a=2409012264" style="border:none !important; margin:0px !important;" width=1></div></div><div class=links_top><div class=links_top_back><a href=./page-gestion-fichiers-dossiers-python><i class="glyphicon glyphicon-chevron-left"></i> Gestion fichiers et dossiers </a></div><div class=links_top_next><a href=./page-creer-graphiques-scientifiques-python-apprendre> Graphiques scientifiques <i class="glyphicon glyphicon-chevron-right"></i></a></div></div><div style="background-color: #6d6d6d ; clear:both; height:50px; padding:5px;"><a href=./page-cours-python-debutant-documentation style=float:left;width:25%;text-align:center title=Python><img src=/images/logo_python.png></a><a href=./page-cours-python-avance-documentation-francaise style=float:left;width:25%;text-align:center title="Python avancé"><img src=/images/logo_python_best.png></a><a href=./page-django-cours-tutoriels-documentation-francaise style=float:left;width:25%;text-align:center title="Python Django"><img src=/images/logo_django.png></a><a href=./page-raspberry-pi-apprendre-debutant-acheter-python style=float:left;width:25%;text-align:center title="Python Raspberry pi"><img src=/images/logo_raspberry.png style=margin-right:0px;padding-right:0px;></a></div><br ; style=clear:both><div class=container id=menu_main><a href=./ id=logo_menu title="Cours python pour débutants et experts"><img src=/images/python.png title="Apprendre python django cours débutant raspberry pi tutoriels "></a><br><!-- Left menu --><div id=left_menu><div><div><h3> Python débutant </h3><ul><li><a href=./ title="Python language de programmation apprendre cours tutoriaux django informatique dévelopement web internet script"> Présentation Python </a></li><li><a href=./page-apprendre-installer-python-ordinateur title="Installer Python sur votre ordinateur"> Installer Python </a></li><li><a href=./page-utiliser-interpreteur-python title="Interpréteur python"> Interpréteur python </a></li><li><a href=./page-editeurs-python-gratuits-payants-ide title=" Editeurs IDE Python"> IDE Editeurs python </a></li><li><a href=./page-apprendre-variables-debutant-python title="Calculs et variables python"> Calculs et variables </a></li><li><a href=./page-apprendre-listes-list-tableaux-tableaux-liste-array-python-cours-debutant title="Les listes python"> Les listes </a></li><li><a href=./page-apprendre-tuples-tuple-python title="Les tuples python"> Les tuples </a></li><li><a href=./page-apprendre-dictionnaire-python title="Les dictionnaires python"> Les dictionnaires </a></li><li><a href=./page-apprendre-creer-fonction-en-python title="Les fonctions python"> Les fonctions </a></li><li><a href=./page-builtin-built-in-fonctions-internes-python title="Les fonctions natives de python"> Les fonctions natives </a></li><li><a href=./page-apprendre-conditions-structures-conditionnelles-if-else-python-cours-debutant title="IF ELIF ELSE Python Conditions"> Conditions if elif else </a></li><li><a href=./page-apprendre-boucles-python-loop title="Les boucles for et while Python"> Boucle for / while </a></li><li><a href=./page-python-modules-package-module-cours-debutants-informatique-programmation title="Les modules et les packages en python"> Les modules/packages </a></li><li><a href=./page-apprendre-exceptions-except-python-cours-debutant title="Les exceptions python"> Les exceptions </a></li><li><a href=./page-comprehension-list-listes-python-cours-debutants title="Les compréhensions de liste python"> Les compréhensions de liste </a></li><li><a href=./page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants title="Programmation orientée objet en python /  classes"> Programmation orientée objet </a></li><li><a href=./page-decorateurs-decorator-python-cours-debutants title="Les décorateurs python"> Les décorateurs </a></li><li><a href=./page-iterateurs-iterator-generateur-generator-python title="Les itérateurs et les générateurs python"> Les itérateurs/générateurs </a></li><li><a href=./page-expressions-regulieres-regular-python title="Les expressions régulières en python"> Expressions régulières </a></li><li><a href=./page-lire-ecrire-creer-fichier-python title="Créer lire et écrire dans un fichier en python"> Lire / Editer un fichier </a></li><li><a href=./page-pep-8-bonnes-pratiques-coder-python-apprendre title="PEP 8 apprendre les bonnes pratiques pour coder en python"> PEP 8 / bonnes pratiques </a></li><li><a href=./page-black-code-formatter title="Black, le formateur de code python sans compromis"> Black formateur de code </a></li></ul></div><div><h3> Python avancé </h3><ul><li><a href=./page-syntaxe-differente-python2-python3-python-differences title="Différences entres python 2 et python 3"> Différences python 2 / 3 </a></li><li><a href=./page-python-encodage-encode-decode-unicode-ascii-codec-character-accents-probleme-string-utf8 title="Encodage python"> Encodage python </a></li><li><a href=./page-pip-installer-librairies-automatiquement title="Pip installe vos librairies en toute simplicité"> Pip installe vos librairies </a></li><li><a href=./page-virtualenv-python-environnement-virtuel title="Environnement virtuel en python"> Virtualenv </a></li><li><a href=./page-debogueur-debugger-debug-python-ipython-pdb-pdbpp-cours-tutoriel-script title="Debug Python ipdb"> Debug </a></li><li><a href=./page-python-path-pythonpath title="Python path"> Python Path </a></li><li><a href=./page-gestion-fichiers-dossiers-python title="Gestion des fichiers et des dossiers en python"> Gestion fichiers et dossiers </a></li><li><a href=./page-tkinter-interface-graphique-python-tutoriel title="Interface graphique Tkinter python"> Interface graphique tKinter </a></li><li><a href=./page-creer-graphiques-scientifiques-python-apprendre title="Créer des graphiques scientifiques avec python"> Graphiques scientifiques </a></li><li><a href=./page-programmation-asynchrone-python-thread-threading title="La programmation asynchrone avec python"> Programmation asynchrone </a></li><li><a href=./page-xml-python-xpath title="XML et python"> XML et python </a></li><li><a href=./page-beautifulsoup-html-parser-python-library-xml title="BeautifulSoup / parser vos XML et HTML"> BeautifulSoup / HTML parser </a></li><li><a href=./page-cx_freeze-creer-executables-python-cours-apprendre title="Créer des exécutables python avec cx_Freeze"> Créer un exécutable </a></li><li><a href=./page-dossier-partage-samba-reseau-python-fstab title="Dossier partagé / samba"> Dossier partagé / samba </a></li><li><a href=./page-python-ftp-creer-copier-voir-dossier-folder-fichiers title="FTP et python"> FTP </a></li><li><a href=./page-python-ssh-connect-host-distant-sftp-os-fabric-client title="Fabric SSH python"> Fabric SSH </a></li><li><a href=./page-python-envoyer-mail-smtp title="Envoyer un mail par SMTP en python"> Envoyer un mail SMTP </a></li><li><a href=./page-reseaux-sockets-python-port title="Python réseau socket"> Réseau / socket </a></li><li><a href=./page-database-data-base-donnees-query-sql-mysql-postgre-sqlite title="Base de données et Python"> Base de données </a></li><li><a href=./page-python-serveur-web-creer-rapidement title="Créer un serveur web rapidement en python"> Créer un serveur web </a></li><li><a href=./page-websocket-python-crossbar-push-socket-publish-subscribe-call-remote-register-wamp title="Websocket Python avec Crossbar"> Websocket &amp; Crossbar </a></li><li><a href=./page-generateur-site-statique-python-django title="Générateur de sites statiques"> Générateur de site statique </a></li></ul></div><div><h3> Django </h3><ul><li><a href=./page-django-introduction-python title="Présentation de django"> Présentation Django </a></li><li><a href=./page-django-installer-python title="Installer django"> Installer Django </a></li><li><a href=./page-django-initialiser-creer-python title="Initialiser un projet django"> Initialiser un projet Django </a></li><li><a href=./page-django-application-creer-python title="Créer une application Django"> Créer une application Django </a></li><li><a href=./page-django-orm-apprendre-base-donnees-database-queryset-modeles title="ORM Django"> ORM Django </a></li><li><a href=./page-django-login-authentification-de-base-apprendre-creer-cours-tutoriel-python title="Login Django"> Login Django </a></li><li><a href=./page-django-champs-modeles-orm-model title="Le champ des modèles Django"> Les champs des modèles </a></li><li><a href=./page-django-interface-admin-administration-settings-django-contrib-auth title="Interface admin Django"> Interface admin Django </a></li><li><a href=./page-django-query-set-queryset-manager title="Django Queryset"> Queryset </a></li><li><a href=./page-django-many-to-many-manytomany-relation-relationships-orm title="Many to Many Django"> Many to many relation </a></li><li><a href=./page-django-vues-views-generic-generiques-python title="Les vues Django"> Les vues </a></li><li><a href=./page-django-formulaires-forms-champs-fields title="Les formulaires Django"> Les formulaires </a></li><li><a href=./page-django-csrf-token-securite-formulaires-python-ajax-post-jquery-anguarjs title="CSRF Token sécurité Django"> CSRF Token </a></li><li><a href=./page-django-middlewares-vues-views-request-response-process-before-after-avant-apres title="Middleware Django"> Les middlewares </a></li><li><a href=./page-django-templates-structure-template-HTML-variables-boucles-tags-filtre-page-dry-application-projet-modifier-dossier title="Templates Django"> Templates Django </a></li><li><a href=./page-django-context-processor-template title="Context Processor Django"> Context Processor </a></li><li><a href=./page-django-signaux-signal-signals-python-cours-apprendre-tutoriel-example title="Signaux Django"> Signaux Django </a></li><li><a href=./page-django-xadmin-bootstrap-twitter-theme-export-xls-csv-xml-python-web-plugin title="Xadmin Django thème bootstrap twitter"> Xadmin </a></li><li><a href=./page-django-admin-select2-admin-ajax-many-to-many-foreign-key-form-widget-django_select2 title="Select2 et Django"> Django select2 </a></li><li><a href=./page-django-crispy-form-formulaire-bootstrap-twitter-html-fieldset-inline-dynamique-template title="Crispy Form Django"> Crispy Forms </a></li><li><a href=./page-django-angularjs-angular-js-coffee-script-coffeescript-python-cours-tuto-tutoriel-exemples title="AngularJS et Django"> AngularJS et Django </a></li><li><a href=./page-django-comment-uploader-fichier-image-cours-apprendre-python-upload-file title="Upload un fichier en Ajax avec Django"> Uploader un fichier en ajax </a></li><li><a href=./page-django-rest-framework-drf-cours-tuto-tutoriel-exemples title="Django REST Framework DRF API"> Django Rest Framework </a></li><li><a href=./page-django-deploiement-python-mise-en-production-linux-gunicorn-supervisor-nginx-installer-configurer-serveur-http-web title="Django déploiement Gunicorn Supervisor Nginx WSGI"> Django déploiement </a></li></ul></div><div><h3> Raspberry Pi </h3><ul><li><a href=./page-raspberry-pi-presentation-python-c-est-quoi-apprendre-nano-ordinateur-video title="Présentation raspberry pi"> Présentation Raspberry pi </a></li><li><a href=./page-raspberry-pi-install-installer-debian-linux-windows-ubuntu title="Installer raspbian (OS linux) sur raspberry pi"> Installer Raspbian </a></li><li><a href=./page-raspberry-pi-adresse-ip-statique-address-static title="Addresse IP statique / raspberry pi"> IP statique </a></li><li><a href=./page-raspberry-pi-partage-share-dossier-folder-samba-debian title="Partager un dossier debian / raspberry pi"> Samba / partager un dossier </a></li><li><a href=./page-raspberry-pi-lecture-lire-video-1080p-full-hd-omxplayer-ligne-commande title="OMXPlayer FULL HD 1080px raspberry pi"> Lire vidéo 1080p </a></li><li><a href=./page-raspberry-pi-installer-vpn-dns-openvpn-debian-python title="Installer VPN raspberry pi"> Installer VPN </a></li><li><a href=./page-raspberry-pi-installer-client-torrent-transmission-download-dl-python title="Installer et utiliser un client torrent"> Client torrent </a></li></ul></div><div><h3> Site </h3><ul><li><a href=./page-contact title=Contact> Contacter l'auteur </a></li><li><a href=./page-mentions-legales title="Mentions légales"> Mentions légales </a></li></ul></div></div></div></div><!-- /container --><hr><div style=clear:both;><footer><p style=color:#ccc;text-align:center;> Apprendre programmation cours python 3 <br> Django internet web - Documentation débutant et expert <br><a href=/en/ hreflang=en title="Python Django"> Version anglaise </a><p></p></p></footer></div><!-- end page --></div><!--
+<div id="cookies">
+  <div style="padding:20px;">
+   
+      <div class="part1">
+        <div style="padding:10px;">
+        En poursuivant votre navigation, vous acceptez l’utilisation de cookie.<br />
+        <a href="/page-mentions-legales">En savoir plus</a>
+      </div>
+        
+      </div>
+      <div class="part2">
+        <button onclick="res_cookies()" style="color:green;">D'accord</button>
+      </div>
+    
+  </div>
+
+</div>
+--><!--
+
+<style>
+#cookies{
+display: none;
+text-align:left;
+margin:0px;
+color:white;
+background-color:#0C4B33;
+position:fixed;
+width:100%;
+height:125px;
+bottom:0;
+position:fixed;
+}
+
+#cookies .part1{
+  float:left;
+  width:70%;
+}
+
+#cookies .part2{
+  float:left;
+  width:30%;
+  text-align:center;
+}
+
+#cookies button{
+font-size:1.1em;
+}
+
+
+@media (max-width: 600px) { 
+  #cookies{
+    height:60%
+  }
+  #cookies .part1{
+    width:100%;
+  }
+  #cookies .part2{
+    width:100%;
+  }
+  #cookies button{
+    margin-top:60px;
+  font-size:1.3em;
+  }
+}
+
+
+</style>
+--><!-- Quantcast Choice. Consent Manager Tag --><!--
+<script type="text/javascript" async=true>
+  var elem = document.createElement('script');
+  elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+  elem.async = true;
+  elem.type = "text/javascript";
+  var scpt = document.getElementsByTagName('script')[0];
+  scpt.parentNode.insertBefore(elem, scpt);
+  (function() {
+  var gdprAppliesGlobally = true;
+  function addFrame() {
+      if (!window.frames['__cmpLocator']) {
+      if (document.body) {
+          var body = document.body,
+              iframe = document.createElement('iframe');
+          iframe.style = 'display:none';
+          iframe.name = '__cmpLocator';
+          body.appendChild(iframe);
+      } else {
+          // In the case where this stub is located in the head,
+          // this allows us to inject the iframe more quickly than
+          // relying on DOMContentLoaded or other events.
+          setTimeout(addFrame, 5);
+      }
+      }
+  }
+  addFrame();
+  function cmpMsgHandler(event) {
+      var msgIsString = typeof event.data === "string";
+      var json;
+      if(msgIsString) {
+      json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+      } else {
+      json = event.data;
+      }
+      if (json.__cmpCall) {
+      var i = json.__cmpCall;
+      window.__cmp(i.command, i.parameter, function(retValue, success) {
+          var returnMsg = {"__cmpReturn": {
+          "returnValue": retValue,
+          "success": success,
+          "callId": i.callId
+          }};
+          event.source.postMessage(msgIsString ?
+          JSON.stringify(returnMsg) : returnMsg, '*');
+      });
+      }
+  }
+  window.__cmp = function (c) {
+      var b = arguments;
+      if (!b.length) {
+      return __cmp.a;
+      }
+      else if (b[0] === 'ping') {
+      b[2]({"gdprAppliesGlobally": gdprAppliesGlobally,
+          "cmpLoaded": false}, true);
+      } else if (c == '__cmp')
+      return false;
+      else {
+      if (typeof __cmp.a === 'undefined') {
+          __cmp.a = [];
+      }
+      __cmp.a.push([].slice.apply(b));
+      }
+  }
+  window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+  window.__cmp.msgHandler = cmpMsgHandler;
+  if (window.addEventListener) {
+      window.addEventListener('message', cmpMsgHandler, false);
+  }
+  else {
+      window.attachEvent('onmessage', cmpMsgHandler);
+  }
+  })();
+  window.__cmp('init', {
+      'Language': 'fr',
+  'Initial Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Initial Screen Reject Button Text': 'Je refuse',
+  'Initial Screen Accept Button Text': 'J&#039;accepte',
+  'Initial Screen Purpose Link Text': 'Afficher toutes les utilisations prévues',
+  'Purpose Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Purpose Screen Body Text': 'Vous pouvez configurer vos réglages et choisir comment vous souhaitez que vos données personnelles soient utilisées.',
+  'Purpose Screen Vendor Link Text': 'Afficher la liste complète des partenaires',
+  'Purpose Screen Cancel Button Text': 'Annuler',
+  'Purpose Screen Save and Exit Button Text': 'Enregistrer et quitter',
+  'Vendor Screen Title Text': 'Le respect de votre vie privée est notre priorité',
+  'Vendor Screen Body Text': 'Vous pouvez configurer vos réglages indépendamment pour chaque partenaire listé ci-dessous.',
+  'Vendor Screen Accept All Button Text': 'Tout Accepter',
+  'Vendor Screen Reject All Button Text': 'Tout Refuser',
+  'Vendor Screen Purposes Link Text': 'Revenir aux Objectifs',
+  'Vendor Screen Cancel Button Text': 'Annuler',
+  'Vendor Screen Save and Exit Button Text': 'Enregistrer et quitter',
+  'Initial Screen Body Text': 'Nos partenaires et nous-mêmes utilisent différentes technologies, telles que les cookies, pour personnaliser les contenus et les publicités.',
+  'Initial Screen Body Text Option': 1,
+  'Publisher Name': 'python.doctor',
+  'Publisher Logo': 'https://python.doctor/images/python.png',
+  'Display UI': 'always',
+  'Min Days Between UI Displays': 60,
+  'Publisher Purpose IDs': [1,5],
+  'No Option': false,
+  'UI Layout': 'banner',
+  'Display Persistent Consent Link': false,
+  });
+</script>
+--><!-- End Quantcast Choice. Consent Manager Tag --><script type=text/javascript>
+   //<![CDATA[
+var __current_page = './page-tkinter-interface-graphique-python-tutoriel';
+//]]>
+  </script><!-- Opti google --><noscript id=deferred-styles><link href=/css/all.css rel=stylesheet type=text/css></noscript><script async src=/js/main.js?v1>
+  </script><script>
+   var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+  </script></body></html>

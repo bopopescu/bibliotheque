@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/style.css" type="text/css" media="screen" title="screen1">
+ <link rel="stylesheet" href="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/skin.css" type="text/css" media="screen" title="screen1">
+ <title>TP1 - Tutoriel Gtk+2.0/Glade</title>
+ <script type="text/javascript" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/unhide2.js"></script>
+ <script type="text/javascript" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/minimum3.js"></script>
+</head>
+<body>
+<p class="cpr">Guillaume Rivière 2012 – 2020</p>
+<header id="hpage" style="width: 82%; padding: 10pt 40pt 0px; font-size: 2.1em;">
+<a href="http://www.estia.fr/"><img id="logo" class="fluxL" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/logo_estia_new_80px_idx.png" alt="Le logo de l'ESTIA" style="height: 80px;"></a>
+<a href="http://www.bayonne.cci.fr/"><img id="logoC" class="fluxR" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/logo_cci_80px_idx.png" alt="Le logo de la CCI Bayonne Pays Basque" style="height: 80px;"></a>
+<p>Développement Rapide d'Interfaces</p>
+</header>
+<main style="width: 82%; padding: 4pt 40pt 10pt;">
+<header>
+<h1 style="font-size: 1.7em; border-left-width: 45pt;">TP1 - Tutoriel Gtk+2.0/Glade</h1>
+<div class="fyi">
+<p><span class="warn">BUTS PÉDAGOGIQUES</span></p>
+<ul>
+ <li>Découvrir <span class="underline">par la pratique</span> la programmation des interfaces graphiques</li>
+ <li>Découvrir l'utilisation d'un constructeur d'interface</li>
+ <li>Découvrir comment connecter les signaux d'une interface et comment accéder à ses composants</li>
+ <li>Découvrir comment consulter et modifier la valeur d'un composant graphique</li>
+</ul>
+<p><br>Plutôt qu'un cours théorique, vous allez apprendre par la 
+pratique. Ce premier TP vous montre par l'exemple comment réaliser une 
+première interface simple.</p>
+</div>
+</header>
+<p class="cadre"><img class="middle" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/anglais.png" alt="English"> <b>Un peu de vocabulaire&nbsp;:</b><br>• <b>GUI</b> = Graphical User Interface = une Interface Graphique<br>• <span class="bold">Widget</span> = Window Gadget = un composant graphique</p>
+<p class="bold">Dans ce TP, nous allons découvrir les deux «&nbsp;outils&nbsp;» (complémentaires) suivants&nbsp;:</p>
+<p class="italic">• <span class="bold">GTK+ (Gimp Tool Kit)</span>&nbsp;: une bibliothèque C pour faire des interfaces graphiques <a href="http://www.gtk.org/">http://www.gtk.org/</a></p>
+<p>Cette bibliothèque est écrite en C/C++ et peut être utilisée avec 
+d'autres langages de programmation, comme&nbsp;: Python, Ada, PHP, R, 
+Go, Pascal…</p>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/addition_vide.png" alt="Exemple de fenêtre GTK">
+<figcaption><span class="italic">Figure 0.1</span></figcaption>
+</figure>
+<p class="italic">• <span class="bold">Glade</span>&nbsp;: un outil <a class="lnk WKP" href="https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get" title="what you see is what you get">WYSIWYG</a> pour construire une interface graphique GTK+ <a class="lnk GNO" href="http://glade.gnome.org/">http://glade.gnome.org/</a></p>
+<figure class=""><small>Cliquer pour <a class="lnk LEN zin" href="https://www.guillaumeriviere.name/estia/DRI/img/tuto_gtk/glade3.png">agrandir</a></small><br><a class="zin" href="https://www.guillaumeriviere.name/estia/DRI/img/tuto_gtk/glade3.png"><img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/s_glade3.png" alt="Cliquer pour agrandir" title="Cliquer pour agrandir"></a><figcaption><span class="italic">Figure 0.2</span></figcaption></figure>
+
+<section>
+<header>
+<h2 style="font-size: 1.4em;">Exercice 1 • Votre première interface graphique avec GTK+ et Glade <a id="ex1"> </a><a id="exo1"> </a></h2>
+</header>
+<h3>1.1 Dessin de l'interface à l'aide de Glade<a id="subsec1-1"> </a></h3>
+<p>La première étape est de construire une fenêtre <a href="https://developer.gnome.org/gtk2/stable/GtkWindow.html">GtkWindow</a> qui sera structurée par un conteneur <a href="https://developer.gnome.org/gtk2/stable/GtkTable.html">GtkTable</a> et qui contiendra trois étiquettes <a href="https://developer.gnome.org/gtk2/stable/GtkLabel.html">GtkLabel</a>, deux zones de saisie <a href="https://developer.gnome.org/gtk2/stable/GtkEntry.html">GtkEntry</a> et un bouton <a href="https://developer.gnome.org/gtk2/stable/GtkButton.html">GtkButton</a>&nbsp;:</p>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/composition.png" alt="Composition de la fenêtre du programme addition">
+<figcaption><span class="italic">Figure 1.1.1</span></figcaption>
+</figure>
+<ol>
+ <li>Lancez le programme <a href="file:///C:/%22Program%20Files%20(x86)%22/GLADE-3.8/bin/glade-3.exe"><code>C:\"Program Files (x86)"\GLADE-3.8\bin\glade-3.exe</code></a>
+<ul>
+ <li>Remarque&nbsp;: créer un raccourci sur votre bureau permettra d'aller plus vite les prochaines fois.</li>
+</ul>
+ </li>
+ <li>À partir de ce point, les étapes sont décrites dans la vidéo <code>gtk-glade-v2.avi</code>&nbsp;:
+<ol>
+ <li>Créez deux nouveaux répertoires <code>C:\PROG1ACI\1A_GUI_GTK\</code> et <code>C:\PROG1ACI\1A_GUI_GTK\Addition\</code></li>
+ <li>Copiez la vidéo dans <code>C:\PROG1ACI\1A_GUI_GTK\Addition\</code></li>
+<ul>
+ <li>en la récupérant depuis le disque "Cours" <a href="i:\G.RIVIERE\1A_Developpement_Rapide_Interface\"><code>I:\G.RIVIERE\1A_Developpement_Rapide_Interface\</code></a> <span class="warn">(de préférence, car plus rapide)</span></li>
+ <li>ou bien, en la récupérant depuis internet&nbsp;: <a class="lnk VID" href="http://www.guillaumeriviere.name/estia/DRI/pub/gtk-glade-v2.avi">gtk-glade-v2.avi</a> (10 Mio)</li>
+</ul>
+ <li>Attention, votre répertoire de travail sera <code>C:\PROG1ACI\1A_GUI_GTK\Addition\</code> ce qui diffère légèrement du chemin donné à la fin de la vidéo.</li>
+ <li>Branchez vos écouteurs pour avoir les commentaires et utilisez à bon escient le bouton pause pendant la lecture de cette vidéo !</li>
+</ol>
+ </li>
+</ol>
+<p class="remarque">Nous qualifions cette approche de «&nbsp;<span class="bold">rapide</span>&nbsp;» ou de «&nbsp;<span class="bold">facile</span>&nbsp;»
+ car la visualisation du résultat est immédiate, d'une part, et car cela
+ évite de produire le code «&nbsp;à la main&nbsp;» (et «&nbsp;en 
+aveugle&nbsp;»), d'autre part. L'autre approche, que nous pouvons 
+qualifier de «&nbsp;<span class="bold">classique</span>&nbsp;», consisterait par exemple à produire deux fichiers comme ceux-ci&nbsp;:<br><code>addition.h</code><br><textarea rows="14" cols="80" class="gris">#ifndef __ADDITON_H
+#define __ADDITON_H
+
+struct addition_widgets {
+  GtkWindow *window;
+  GtkLabel  *label_message;
+  GtkEntry  *entry_nombre1;
+  GtkEntry  *entry_nombre2;
+} ;
+
+struct addition_widgets create_addition_widgets () ;
+
+#endif /* __ADDITON_H */
+</textarea><br><code>addition.c</code><br><textarea rows="34" cols="80" class="gris">#include &lt;gtk/gtk.h&gt;
+#include "callbacks.h"
+#include "addition.h"
+
+struct addition_widgets create_addition_widgets () {
+  GtkWidget *label1, *label2, *button1, *table1;
+  struct addition_widgets addition ;
+  
+  label1  = gtk_label_new ("Nombre 1 : ");
+  label2  = gtk_label_new ("Nombre 2 : ");
+  button1 = gtk_button_new_with_label ("Addition");
+  table1  = gtk_table_new (3, 2, TRUE);
+
+  addition.window        = (GtkWindow *) gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  addition.entry_nombre1 = (GtkEntry *) gtk_entry_new ();
+  addition.entry_nombre2 = (GtkEntry *) gtk_entry_new ();
+  addition.label_message = (GtkLabel *) gtk_label_new ("");
+
+  gtk_table_attach (GTK_TABLE(table1), label1                            , 0, 1, 0, 1, 0, 0, 0, 0);
+  gtk_table_attach (GTK_TABLE(table1), GTK_WIDGET(addition.entry_nombre1), 1, 2, 0, 1, 0, 0, 0, 0);
+  gtk_table_attach (GTK_TABLE(table1), label2                            , 0, 1, 1, 2, 0, 0, 0, 0);
+  gtk_table_attach (GTK_TABLE(table1), GTK_WIDGET(addition.entry_nombre2), 1, 2, 1, 2, 0, 0, 0, 0);
+  gtk_table_attach (GTK_TABLE(table1), button1                           , 0, 1, 2, 3, 0, 0, 0, 0);
+  gtk_table_attach (GTK_TABLE(table1), GTK_WIDGET(addition.label_message), 1, 2, 2, 3, 0, 0, 0, 0);
+  
+  gtk_window_set_title (addition.window, "Addition");
+  gtk_container_add (GTK_CONTAINER (addition.window), GTK_WIDGET(table1));
+
+  g_signal_connect (G_OBJECT(addition.window), "destroy", G_CALLBACK(on_window1_destroy), NULL);
+  g_signal_connect (G_OBJECT(button1), "clicked", G_CALLBACK(on_button_addition_clicked), NULL);
+       
+  return addition;
+}
+</textarea><br class="flux"></p>
+<h3>1.2 Le fichier principal de l'interface (<code>main.c</code>)<a id="subsec1-2"> </a></h3>
+<ul>
+ <li>À l'aide de <code>Notepad++</code> vous allez créer le fichier <code>C:\PROG1ACI\1A_GUI_GTK\Addition\main.c</code> comme suit&nbsp;:
+<figure>
+<textarea rows="39" cols="80">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;gtk/gtk.h&gt;
+#include "callbacks.h"
+
+GtkBuilder *builder;
+
+int main (int argc, char *argv[]) {
+  GtkWidget  *window1;
+
+  /* Initialisation de GTK */
+  gtk_init (&amp;argc, &amp;argv);
+
+  /* Creation des widgets de l'interface a partir du fichier XML de Glade, grace au builder GTK */
+  builder = gtk_builder_new ();
+  if (gtk_builder_add_from_file (builder, "addition.glade", NULL) == 0) {
+    fprintf (stderr, "Erreur: ouverture du fichier GLADE\n") ;
+    exit(EXIT_FAILURE);
+  }
+
+  /* Recuperation du widget de la fenetre principale */
+  window1 = GTK_WIDGET (gtk_builder_get_object (builder, "window1"));
+
+  /* Connection des fonctions de rappel avec les signaux de l'interface */
+  gtk_builder_connect_signals (builder, NULL);
+
+  /* Changement de la fenetre principale a l'etat visible */
+  gtk_widget_show (window1);
+
+  /* Lancement de l'execution de la boucle GTK */
+  gtk_main ();
+  g_object_unref (G_OBJECT (builder));
+
+  printf ("Fin du programme\n") ;
+
+  /* Fin du programme */
+  return EXIT_SUCCESS;
+}
+</textarea>
+<figcaption><span class="italic">Code 1.2.1</span></figcaption>
+</figure>
+ </li>
+ <li>Remarquez que le fichier <code>addition.glade</code> créé précédemment à l'aide de Glade est utilisé par la fonction <code>gtk_builder_add_from_file()</code>.</li>
+</ul>
+<h3>1.3 Un fichier pour les fonctions de rappels de l'interface (<code>callbacks.c</code>)<a id="subsec1-3"> </a></h3>
+<p>Avec Glade nous avons précédemment indiqué d'une part que le signal <span class="italic">"destroy"</span> de la fenêtre <code>window1</code> serait connecté à une fonction nommée <code>on_window1_destroy()</code>, et d'autre part, que le signal "clicked" du composant <code>button_addition</code> serait connecté à une fonction nommée <code>on_button_addition_clicked()</code>.
+ Pour que notre interface puisse fonctionner, il faut donc écrire le 
+code de ces deux « fonctions de rappel » (en d'autres termes, fonction 
+qui sera appelée lorsque le signal correspondant sera émis par le 
+composant auquel elle est connectée). Le rôle de la première fonction 
+sera simplement de stopper la boucle d'exécution de GTK. Le rôle de la 
+seconde sera de récupérer les valeurs saisies par l'utilisateur, de 
+procéder au calcul et d'afficher le résultat.</p>
+<ul>
+ <li>À l'aide de <code>Notepad++</code> vous allez créer le fichier <code>C:\PROG1ACI\1A_GUI_GTK\Addition\callbacks.h</code> comme suit&nbsp;:
+<figure>
+<textarea rows="9" cols="80">#ifndef CALLBACKS_H
+#define CALLBACKS_H
+
+#include &lt;gtk/gtk.h&gt;
+
+G_MODULE_EXPORT void on_window1_destroy (GtkObject *object, gpointer user_data) ;
+G_MODULE_EXPORT void on_button_addition_clicked (GtkObject *object, gpointer user_data) ;
+
+#endif /* CALLBACKS_H */
+</textarea>
+<figcaption><span class="italic">Code 1.3.1</span></figcaption>
+</figure>
+ </li>
+ <li>Vous allez maintenant créer le fichier <code>C:\PROG1ACI\1A_GUI_GTK\Addition\callbacks.c</code>
+<ol>
+ <li>Au début du fichier copiez les inclusions d'entêtes suivantes&nbsp;:
+<figure>
+<textarea rows="6" cols="80">#include &lt;stdio.h&gt;   /* sprintf */
+#include &lt;stdlib.h&gt;  /* atoi */
+#include &lt;string.h&gt;  /* strlen, strcmp */
+#include &lt;ctype.h&gt;   /* isdigit */
+
+#include "callbacks.h"
+</textarea>
+<figcaption><span class="italic">Code 1.3.2</span></figcaption>
+</figure>
+ </li>
+ <li>Afin de pouvoir utiliser la variable globale que nous avons définie dans le fichier <code>main.c</code> ajoutez ensuite cette déclaration&nbsp;:
+<figure>
+<textarea rows="1" cols="80">extern GtkBuilder *builder;</textarea>
+<figcaption><span class="italic">Code 1.3.3</span></figcaption>
+</figure>
+ </li>
+ <li>Donnez le code suivant pour la fonction <code>on_window1_destroy()</code>&nbsp;:
+<figure>
+<textarea rows="2" cols="80">  printf("Fermeture de la fenetre.\n");
+  gtk_main_quit();</textarea><br>
+<figcaption><span class="italic">Code 1.3.4</span></figcaption>
+</figure>
+<ul>
+ <li>Ainsi, fermer la fenêtre provoquera en même temps l'arrêt de la boucle GTK (lancée dans la fonction <code>main()</code>) puis le programme se terminera.</li>
+ <li>Car sinon, la fenêtre se fermera, mais le programme continuera de fonctionner&nbsp;!</li>
+</ul>
+ </li>
+ <li>Donnez le code suivant pour la fonction <code>on_button_addition_clicked()</code>&nbsp;:
+<figure>
+<textarea rows="29" cols="80">  int n1, n2, n3 ;
+  char msg[128] = "" ;
+  const char *s1, *s2 ;
+
+  /* Recuperer des pointeurs vers les widgets */
+  GtkLabel *label_message = GTK_LABEL (gtk_builder_get_object (builder, "label_message"));
+  GtkEntry *entry_nombre1 = GTK_ENTRY (gtk_builder_get_object (builder, "entry_nombre1"));
+  GtkEntry *entry_nombre2 = GTK_ENTRY (gtk_builder_get_object (builder, "entry_nombre2"));
+
+  /* Recuperer le contenu des deux zones de saisie */
+  s1 = gtk_entry_get_text (entry_nombre1) ;
+  s2 = gtk_entry_get_text (entry_nombre2) ;
+
+  /* Traitement */
+  if (!strcmp(s1, "") || !strcmp(s2, "")) {
+    sprintf (msg, "Champs vides") ;
+  }
+  else if (!est_nombre_entier(s1) || !est_nombre_entier(s2)) {
+    sprintf (msg, "Pas des nombres") ;
+  }
+  else {
+    n1 = atoi(s1) ;
+    n2 = atoi(s2) ;
+    n3 = n1 + n2 ;
+    sprintf (msg, "La somme vaut %d", n3) ;
+  }
+
+  /* Remplacer le texte du label de message */
+  gtk_label_set_text (label_message, msg) ;</textarea><br>
+<figcaption><span class="italic">Code 1.3.5</span></figcaption>
+</figure>
+<ul>
+ <li>Remarquez l'utilisation de <a href="http://man.developpez.com/man3/sprintf/">sprintf()</a> pour préparer les chaînes de caractères.</li>
+</ul>
+ </li>
+ <li>Ajouter la fonction suivante avant les autres fonctions&nbsp;:
+<figure>
+<textarea rows="10" cols="80">char est_nombre_entier (const char *s) {
+  int i ;
+  char res = 1 ; /* true */
+
+  for (i=0 ; i&lt;strlen(s) &amp;&amp; res ; i++)
+    if (!isdigit(s[i]))
+      res = 0 ; /* false */
+
+  return res ;
+}</textarea><br>
+<figcaption><span class="italic">Code 1.3.6</span></figcaption>
+</figure>
+<ul>
+ <li>La fonction <a href="http://man.developpez.com/man3/isdigit/">isdigit()</a> permet de savoir si le caractère est un chiffre.</li>
+</ul>
+ </li>
+ <li>N'oubliez pas d'enregistrer les fichiers <code>main.c</code>, <code>callbacks.h</code> et <code>callbacks.c</code></li>
+</ol>
+ </li>
+</ul>
+<h3>1.4 Compilation et exécution<a id="subsec1-4"> </a></h3>
+<ul>
+ <li>En programmation, lorsqu'on utilise une bibliothèque (comme GTK, 
+mais encore OpenCV, OpenGL, … par exemple) il faut spécifier au 
+compilateur différentes informations comme&nbsp;:
+<ul>
+ <li>Les répertoires où trouver les fichiers d'entête en <code>.h</code> (option <code>-I</code> de <code>gcc</code>)</li>
+ <li>Les répertoires où trouver les fichiers <code>.lib</code> (option <code>-L</code> de <code>gcc</code>)</li>
+ <li>Le nom des fichiers <code>.lib</code> qu'on souhaite utiliser (option <code>-l</code> de <code>gcc</code>, mais sans écrire le <code>.lib</code>)</li>
+</ul>
+ </li>
+ <li>L'écriture de la commande de compilation devient alors longue et 
+difficile à écrire ! La solution est alors de passer par un fichier dit <code>Makefile</code> qui décrit comment le projet doit être compilé (voir dans le <span class="underline">chapitre 1</span> du cours de programmation procédurale). Téléchargez, dans le répertoire <code>C:\PROG1ACI\1A_GUI_GTK\Addition</code>, le fichier <a class="lnk TXT" href="https://www.guillaumeriviere.name/estia/DRI/pub/Makefile">Makefile</a> déjà écrit.
+<ul>
+ <li>Attention, le fichier doit s'appeler <code>Makefile</code> et non pas <code>Makefile.txt</code>, il faudra donc peut être le renommer comme suit depuis une console&nbsp;:<br><code>rename Makefile.txt Makefile</code></li>
+ <li>Ouvrez maintenant le fichier <code>Makefile</code> avec <code>Notepad++</code> et examinez son contenu.</li>
+</ul>
+ </li>
+ <li>Depuis la console&nbsp;:
+<ol>
+ <li>Depuis le répertoire <code>C:\PROG1ACI\1A_GUI_GTK\Addition</code></li>
+ <li>Pour exécuter le fichier <code>Makefile</code> tapez simplement <code>make</code></li>
+ <li>Et si tout s'est bien passé, tapez <code>addition.exe</code>
+<ul>
+ <li>Si jamais un message d'erreur apparaît concernant les DLL 
+(ex.&nbsp;: zlib1.dll), c'est parce que d'autres versions de la 
+bibliothèque sont installées sur votre système.</li>
+ <li>Dans ce cas, copiez directement la bonne version des DLL de GTK à côté de votre exécutable, comme ceci&nbsp;:<br><code>copy C:\"Program Files (x86)"\GTK\bin\*.dll C:\PROG1ACI\1A_GUI_GTK\Addition\</code></li>
+ <li>Essayez de nouveau de lancer <code>addition.exe</code></li>
+</ul>
+ </li>
+ <li>Vous devez alors voir la fenêtre suivante apparaître&nbsp;:</li>
+</ol>
+ </li>
+</ul>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/addition.png" alt="La fenêtre du programme addition">
+<figcaption><span class="italic">Figure 1.4.1</span></figcaption>
+</figure>
+</section>
+<section>
+<header>
+<h2 style="font-size: 1.4em;">Exercice 2 • Un utilitaire pour les pourcentages<a id="exo2"> </a></h2>
+</header>
+<p class="objectif">En vous inspirant de l'interface précédente, faire 
+une nouvelle interface GTK+ appelée « pourcentages » (qui sera 
+enregistrée dans <code>C:\PROG1ACI\1A_GUI_GTK\Pourcentages\</code>). Le but est que l'utilisateur saisit 2 nombres entiers <code>X</code> et <code>Y</code>, et que l'interface puisse calculer et afficher le pourcentage d'augmentation qu'il a fallu appliquer à <code>X</code> pour obtenir <code>Y</code>. Essayez ensuite d'adapter le programme pour gérer les nombres réels.<br class="flux"></p>
+<p><a class="lnk LEN zin" onclick="unhide('aidecalcul');zoom(this)">Besoin d'aide pour la formule de calcul&nbsp;?</a></p>
+<figure id="aidecalcul" class="hidden">
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/formule_pourcent.png" alt="y = x + (x * a / 100) &lt;=&gt; a = (100 * y / x) - 100">
+<figcaption><span class="italic">Figure 2.1</span></figcaption>
+</figure>
+<p>Exemples&nbsp;:</p>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/pourcentages1.png" alt="La fenêtre pourcentages">
+<figcaption><span class="italic">Figure 2.2</span></figcaption>
+</figure>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/pourcentages2.png" alt="La fenêtre pourcentages">
+<figcaption><span class="italic">Figure 2.3</span></figcaption>
+</figure>
+<p>Exemple avec des nombres à virgule&nbsp;:</p>
+<figure>
+<img src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/pourcentages3.png" alt="La fenêtre pourcentages">
+<figcaption><span class="italic">Figure 2.4</span></figcaption>
+</figure>
+<p class="conseil"><span class="bold">Documentation GTK+ 2&nbsp;:</span><br>• API&nbsp;: <a href="http://developer.gnome.org/gtk2/stable/gtkobjects.html">Widgets and Objects</a><br>• Manuel&nbsp;: <a href="http://developer.gnome.org/gtk2/stable/">Reference Manual</a><br>• Tutoriel&nbsp;: <a href="http://developer.gnome.org/gtk-tutorial/stable/">GTK+ 2.0 Tutorial</a><br>• Tutoriel&nbsp;: <a href="http://zetcode.com/tutorials/gtktutorial/">The GTK+ tutorial</a><br class="flux"></p>
+</section>
+</main>
+<footer style="width: 82%;">
+<span class="italic">Last updated:</span> May 22, 2019 - <span class="italic">Webmaster:</span> g.riviere@estia.fr - <span class="italic">URL:</span> <a href="http://www.guillaumeriviere.name/estia/DRI/tp1.php">http://www.guillaumeriviere.name/estia/DRI/tp1.php</a><br><br>
+<a href="https://html5.validator.nu/?doc=http://www.guillaumeriviere.name/estia/DRI/tp1.php"><img class="middle" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/valid-html5.png" alt="Valid HTML5!" title="Valid HTML5!"></a>
+<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.guillaumeriviere.name/estia/DRI/tp1.php"><img class="middle" src="TP1%20-%20Tutoriel%20Gtk+2.0_Glade_fichiers/vcss.gif" alt="Valid CSS3!" title="Valid CSS3!"></a>
+</footer>
+
+
+</body></html>

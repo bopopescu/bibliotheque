@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr-CA"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/osd.js"></script><script src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/cookie.js"></script><script src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/show_ads_impl_fy2019.js" id="google_shimpl"></script><script type="text/javascript" async="" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/analytics.js"></script><script async="" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/js.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122297617-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Fiche Afficher des données en lignes et en colonnes avec le Treeview">
+    <meta name="author" content="Christiane Lagacé : https://christianelagace.com">
+    
+    <meta name="csrf-token" content="TRoljmMyObwdyyzCTb2t7tyjjUv1LPYTQ4iEY225">
+
+    <title>Apical | Afficher des données en lignes et en colonnes avec le Treeview</title>
+
+    
+            
+        
+                    <link rel="apple-touch-icon" sizes="180x180" href="https://apical.xyz/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="https://apical.xyz/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="https://apical.xyz/favicon-16x16.png">
+            <link rel="manifest" href="https://apical.xyz/site.webmanifest">
+            <link rel="mask-icon" href="https://apical.xyz/safari-pinned-tab.svg" color="#3543a0">
+            <meta name="msapplication-TileColor" content="#2b5797">
+            <meta name="theme-color" content="#ffffff">
+            
+    <meta name="robots" content="noodp">
+
+    <script data-ad-client="ca-pub-0968524214519104" async="" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/adsbygoogle.js" data-checked-head="true"></script>
+
+    <link href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/css.css" rel="stylesheet">
+    <link href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/css_003.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/all.css">
+    
+    <link href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/css_002.css" rel="stylesheet">
+
+    
+        <link rel="stylesheet" href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/fiche.css">
+
+<link rel="preload" href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/integrator.js" as="script"><script type="text/javascript" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/integrator.js"></script><link rel="preload" href="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/integrator_002.js" as="script"><script type="text/javascript" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/integrator_002.js"></script></head>
+
+<body id="messtyles">
+    <div class="aucunepubauto">
+        <div class="logo fix-menu" id="zoneentete">
+            <div class="container">
+                <div class="avant"></div>
+                <div class="apres">
+                                            <div id="menuicones" class="porteuroffset fix-menu" data-verticaloffset="47" data-horizontaloffset="0">
+    <a href="https://apical.xyz/"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Accueil-MenuSecondaire.svg" alt="Accueil" title="Accueil"></a>
+
+    
+            <a href="#" class="rapetissertexte"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/IconeRapetisserTexte.svg" alt="Rapetisser le texte" title="Rapetisser le texte"></a>
+        <a href="#" class="grossirtexte"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/IconeGrossirTexte.svg" alt="Grossir le texte" title="Grossir le texte"></a>
+    
+    <a href="#" class="ouvrirpopupchristiane ouvrirpopuprecherche" data-target="#popuprecherche"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Rechercher-MenuSecondaire.svg" alt="Recherche" title="Rechercher"></a>
+    <a href="#" class="ouvrirpopupchristiane ouvrirpopupauthentification" data-target="#popupauthentification"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Login-MenuSecondaire.svg" alt="Authentification" title=""></a>
+</div>
+                                    </div>
+                <div class="centre">
+                    <a href="https://apical.xyz/"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/LogoApical-blanc.svg" alt="Apical, ma plateforme d'apprentissage"></a>
+                </div>
+            </div>
+        </div>
+
+        
+                    <nav class="navbar navbar-expand-lg navbar-light py-lg-3" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Apical</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Basculer">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="navbar-nav mx-auto">
+
+                
+
+                <li class="nav-item px-lg-4 ">
+                    <a href="https://apical.xyz/formations" class=" nav-link text-uppercase text-expanded active">Formations <span class="sr-only">(actuel)</span></a>
+
+                 
+                                    </li>
+
+                
+
+                
+                
+
+                
+                
+
+                <li class="nav-item px-lg-4">
+                    
+                    <a href="https://apical.xyz/articles" class="nav-link text-uppercase text-expanded ">Blogue </a>
+                </li>
+
+                
+                <li class="nav-item px-lg-4 dropdown">
+                    <a href="https://apical.xyz/pages/formulairebcrypt" class="dropdown-toggle nav-link text-uppercase text-expanded  " data-toggle="dropdown" data-target="#" aria-haspopup="true" aria-expanded="false">Outils </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item " href="https://apical.xyz/pages/formulairebcrypt">Hachage bcrypt </a>
+                        </div>
+                </li>
+
+                
+
+                
+                
+
+                <li class="nav-item px-lg-4 dropdown">
+                    <a href="https://apical.xyz/contact" class="dropdown-toggle nav-link text-uppercase text-expanded " data-toggle="dropdown" data-target="#" aria-haspopup="true" aria-expanded="false">Aide </a>
+                    <div class="dropdown-menu">
+                        
+                        <a class="dropdown-item " href="https://apical.xyz/contact">Contact </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="https://apical.xyz/apropos">À
+                            propos </a>
+                    </div>
+                </li>
+
+            </ul>
+
+            
+            <div class="iconespourmobile">
+                <div id="menuicones" class="porteuroffset fix-menu" data-verticaloffset="47" data-horizontaloffset="0">
+    <a href="https://apical.xyz/"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Accueil-MenuSecondaire.svg" alt="Accueil" title="Accueil"></a>
+
+    
+            <a href="#" class="rapetissertexte"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/IconeRapetisserTexte.svg" alt="Rapetisser le texte" title="Rapetisser le texte"></a>
+        <a href="#" class="grossirtexte"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/IconeGrossirTexte.svg" alt="Grossir le texte" title="Grossir le texte"></a>
+    
+    <a href="#" class="ouvrirpopupchristiane ouvrirpopuprecherche" data-target="#popuprecherche"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Rechercher-MenuSecondaire.svg" alt="Recherche" title="Rechercher"></a>
+    <a href="#" class="ouvrirpopupchristiane ouvrirpopupauthentification" data-target="#popupauthentification"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Login-MenuSecondaire.svg" alt="Authentification" title=""></a>
+</div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+        
+        
+                    </div>
+    
+    <div class="container" style="height: auto !important;">
+
+        
+        <div id="listefavoris">
+                    </div>
+
+        
+        <div id="dernierespagesvisitees">
+                    </div>
+
+        <div class="contenuprincipal" style="height: auto !important; min-height: 0px !important;">
+                <div class="sectionnavigationfiches">
+        <div class="tabledesmatieres">
+            <div class="avant">
+                
+                <a class="btn btn-secondary btn-sm tdmchapitre" href="https://apical.xyz/formations/python#chapitre-environnement_graphique_tkinter">Table des matières</a>
+            </div>
+            <div class="apres">&nbsp;
+            </div>
+            <div class="titreformationchapitre centre">
+                Formation PUB400&nbsp;: Python, 2018
+                <span class="separateur">♦</span>
+                <span class="titrechapitre">Environnement graphique tkinter</span>
+            </div>
+        </div>
+        <div class="push"></div>
+        <div class="card navigationfiches">
+    <div class="card-header">
+        <div class="avant">
+            
+            <input type="image" class="navigationpremierefiche mousetrap" title="Premier [Alt+F]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Premier.svg" alt="Premier">
+            <input type="image" class="navigationficheprecedente mousetrap" title="Précédent [Alt+P]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Precedent.svg" alt="Précédent">
+        </div>
+        <div class="apres">
+            <input type="image" class="navigationfichesuivante mousetrap" title="Suivant [Alt+N]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Suivant.svg" alt="Suivant">
+            <input type="image" class="navigationdernierefiche mousetrap" title="Dernier [Alt+L]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Dernier.svg" alt="Dernier">
+        </div>
+        
+        <div class="centre">
+            
+                        
+            
+            <input type="range" id="sliderfiches" min="1" max="62" value="51">
+            <output for="sliderfiches" onforminput="value = sliderfiches.valueAsNumber;"></output>
+            <input type="hidden" id="navigationfiches" value="[&quot;Installation de Python&quot;,&quot;Installation de Pip&quot;,&quot;Installation de Kivy&quot;,&quot;Installation de SQLite&quot;,&quot;Installation de DB Browser for SQLite&quot;,&quot;Installation de PyCharm&quot;,&quot;Installation de SchemaCrawler&quot;,&quot;Qu'est-ce que Python ?&quot;,&quot;Python 2.X vs 3.X&quot;,&quot;Les environnements virtuels&quot;,&quot;Mon premier programme Python avec PyCharm&quot;,&quot;Shebang ou hash bang : #!&quot;,&quot;Configurer PyCharm pour que le shebang  soit ajout\u00e9 automatiquement&quot;,&quot;Encodage du fichier&quot;,&quot;Utilisation d'un paquet ou d'un module&quot;,&quot;Les cha\u00eenes de caract\u00e8res&quot;,&quot;Les tableaux, listes et tuples&quot;,&quot;Les structures de contr\u00f4le&quot;,&quot;Le dictionnaire de donn\u00e9es&quot;,&quot;Paquet sqlite3 pour interagir avec une BD SQLite&quot;,&quot;Branchement \u00e0 une BD SQLite avec Python&quot;,&quot;Branchement \u00e0 une BD : version plus robuste&quot;,&quot;Ex\u00e9cuter une requ\u00eate SQL dans un programme Python&quot;,&quot;Boucler dans les r\u00e9sultats d'une requ\u00eate&quot;,&quot;Requ\u00eate qui ne peut pas retrouver plus d'un enregistrement&quot;,&quot;Aligner des donn\u00e9es \u00e0 la console&quot;,&quot;Ins\u00e9rer des donn\u00e9es par programmation&quot;,&quot;Choix de l'enregistrement en supprimer \u00e0 la console&quot;,&quot;V\u00e9rifier si la suppression a r\u00e9ussi&quot;,&quot;Choix de l'enregistrement \u00e0 modifier&quot;,&quot;Saisie des nouvelles informations \u00e0 la console&quot;,&quot;Enregistrement des donn\u00e9es&quot;,&quot;Une interface graphique ? Quelle interface graphique ?&quot;,&quot;Le paquet tkinter&quot;,&quot;La fen\u00eatre principale et le mainloop&quot;,&quot;Quelques widgets int\u00e9ressants&quot;,&quot;Libell\u00e9s et positionnement \u00e0 l'\u00e9cran&quot;,&quot;Modifier le texte d'un libell\u00e9&quot;,&quot;Les boutons&quot;,&quot;Am\u00e9liorer l'apparence d'une application b\u00e2tie avec tkinter&quot;,&quot;Les fen\u00eatres popup&quot;,&quot;Bouton associ\u00e9 \u00e0 une fonction maison&quot;,&quot;Assigner du code \u00e0 un \u00e9v\u00e9nement&quot;,&quot;Cliquer sur un bouton \u00e0 l'aide de la touche Entr\u00e9e&quot;,&quot;Les bo\u00eetes de saisie&quot;,&quot;Valider l'information entr\u00e9e dans un widget Entry&quot;,&quot;Utiliser un widget Frame pour positionner les \u00e9l\u00e9ments dans une fen\u00eatre&quot;,&quot;Truc pour centrer le contenu d'une fen\u00eatre&quot;,&quot;Travailler sur un canevas Python&quot;,&quot;Afficher des donn\u00e9es brutes dans un objet Text&quot;,&quot;Afficher des donn\u00e9es en lignes et en colonnes avec le Treeview&quot;,&quot;Ajuster l'apparence d'un TreeView&quot;,&quot;Liste d\u00e9roulante (Combobox)&quot;,&quot;Ajouter un menu dans une application graphique avec tkinter&quot;,&quot;Saisir les donn\u00e9es puis les enregistrer dans la base de donn\u00e9es avec tkinter&quot;,&quot;Quand refermer la connexion ?&quot;,&quot;Suppression dans une application graphique&quot;,&quot;Confirmation avant de supprimer&quot;,&quot;Choix de l'enregistrement \u00e0 modifier avec tkinter&quot;,&quot;Saisie des nouvelles informations dans un environnement graphique&quot;,&quot;Confirmation apr\u00e8s enregistrement avec tkinter&quot;,&quot;Permettre diff\u00e9rentes op\u00e9rations \u00e0 partir d'une liste d'enregistrements&quot;]">
+            <input type="hidden" id="slugschapiptresfiches" value="[{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;Installation_de_Python&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;installation_de_pip&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;installation_de_kivy&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;Installation_de_SQLite&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;Installation_de_DB_Browser_for_SQLite&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;Installation_de_PyCharm&quot;},{&quot;slug_chapitre&quot;:&quot;installations_sur_votre_ordinateur&quot;,&quot;slug_fiche&quot;:&quot;Installation_de_SchemaCrawler&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Qu_est-ce_que_Python&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Python_2_X_vs_3_X&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;les_environnements_virtuels&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Mon_premier_programme_Python&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Shebang_ou_hash_bang&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Configurer_PyCharm_pour_que_le_Shebang_soit_ajoute&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Encodage_du_fichier&quot;},{&quot;slug_chapitre&quot;:&quot;python_002&quot;,&quot;slug_fiche&quot;:&quot;Utilisation_d_un_paquet&quot;},{&quot;slug_chapitre&quot;:&quot;la_syntaxe_les_structures_de_donnees_et_les_structures_de_controle&quot;,&quot;slug_fiche&quot;:&quot;les_chaines_de_caracteres&quot;},{&quot;slug_chapitre&quot;:&quot;la_syntaxe_les_structures_de_donnees_et_les_structures_de_controle&quot;,&quot;slug_fiche&quot;:&quot;les_tableaux_listes_et_tuples&quot;},{&quot;slug_chapitre&quot;:&quot;la_syntaxe_les_structures_de_donnees_et_les_structures_de_controle&quot;,&quot;slug_fiche&quot;:&quot;les_structures_de_controle&quot;},{&quot;slug_chapitre&quot;:&quot;la_syntaxe_les_structures_de_donnees_et_les_structures_de_controle&quot;,&quot;slug_fiche&quot;:&quot;Le_dictionnaire_de_donnees&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Paquet_sqlite3_pour_interagir_avec_une_BD_SQLite&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Branchement_a_une_BD_SQLite&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Branchement_a_une_BD_version_plus_robuste&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Executer_une_requete_SQL_dans_un_programme_Python&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Boucler_dans_les_resultats_d_une_requete&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;Requete_qui_ne_peut_pas_retrouver_plus_d_un_enregi&quot;},{&quot;slug_chapitre&quot;:&quot;python_et_sqlite_002&quot;,&quot;slug_fiche&quot;:&quot;aligner_des_donnees_a_la_console&quot;},{&quot;slug_chapitre&quot;:&quot;insertion_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Inserer_des_donnees_par_programmation&quot;},{&quot;slug_chapitre&quot;:&quot;suppression_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Choix_de_l_enregistrement_en_supprimer_a_la_consol&quot;},{&quot;slug_chapitre&quot;:&quot;suppression_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Verifier_si_la_suppression_a_reussi&quot;},{&quot;slug_chapitre&quot;:&quot;modification_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Choix_de_l_enregistrement_a_modifier&quot;},{&quot;slug_chapitre&quot;:&quot;modification_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Saisie_des_nouvelles_informations_a_la_console&quot;},{&quot;slug_chapitre&quot;:&quot;modification_de_donnees_002&quot;,&quot;slug_fiche&quot;:&quot;Enregistrement_des_donnees&quot;},{&quot;slug_chapitre&quot;:&quot;les_interfaces_graphiques_002&quot;,&quot;slug_fiche&quot;:&quot;une_interface_graphique_quelle_interface_graphique&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;le_paquet_tkinter&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;la_fenetre_principale_et_le_mainloop&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;quelques_widgets_interessants&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Libelles_et_positionnement_a_l_ecran&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Modifier_le_texte_d_un_libelle&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;les_boutons&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Ameliorer_l_apparence_d_une_application_batie_avec&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Les_fenetres_popup&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Bouton_associe_a_une_fonction_maison&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Assigner_du_code_a_un_evenement&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Cliquer_sur_un_bouton_a_l_aide_de_la_touche_Entree&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;les_boites_de_saisie&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;valider_l_information_entree_dans_un_widget_entry&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Utiliser_un_widget_Frame_pour_positionner_les_elem&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Truc_pour_centrer_le_contenu_d_une_fenetre&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Travailler_sur_un_canevas_Python&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;afficher_des_donnees_brutes_dans_un_objet_text&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;afficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Ajuster_l_apparence_d_un_TreeView&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Liste_deroulante_Combobox--002&quot;},{&quot;slug_chapitre&quot;:&quot;environnement_graphique_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Ajouter_un_menu_dans_une_application_graphique_ave&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;saisir_les_donnees_puis_les_enregistrer_dans_la_base_de_donnees_avec_tki___&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Quand_refermer_la_connexion&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Suppression_dans_une_application_graphique&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Confirmation_avant_de_supprimer&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;choix_de_l_enregistrement_a_modifier_avec_tkinter&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Saisie_des_nouvelles_informations_dans_un_environn&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;confirmation_apres_enregistrement_avec_tkinter&quot;},{&quot;slug_chapitre&quot;:&quot;operations_crud_avec_tkinter&quot;,&quot;slug_fiche&quot;:&quot;Permettre_differentes_operations_a_partir_d_une_li&quot;}]">
+            <input type="hidden" id="titresChapitres" value="{&quot;installations_sur_votre_ordinateur&quot;:&quot;Installations sur votre ordinateur&quot;,&quot;python_002&quot;:&quot;Python&quot;,&quot;la_syntaxe_les_structures_de_donnees_et_les_structures_de_controle&quot;:&quot;La syntaxe, les structures de donn\u00e9es et les structures de contr\u00f4le&quot;,&quot;python_et_sqlite_002&quot;:&quot;Python et SQLite&quot;,&quot;insertion_de_donnees_002&quot;:&quot;Insertion de donn\u00e9es&quot;,&quot;suppression_de_donnees_002&quot;:&quot;Suppression de donn\u00e9es&quot;,&quot;modification_de_donnees_002&quot;:&quot;Modification de donn\u00e9es&quot;,&quot;les_interfaces_graphiques_002&quot;:&quot;Les interfaces graphiques&quot;,&quot;environnement_graphique_tkinter&quot;:&quot;Environnement graphique tkinter&quot;,&quot;operations_crud_avec_tkinter&quot;:&quot;Op\u00e9rations CRUD avec tkinter&quot;}">
+        </div>
+    </div>
+</div>
+
+<div class="navigationficheprecedente boutonnavigationtoujoursvisible"><img title="Précédent [Alt+P]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Precedent.svg" alt="Précédent"></div>
+<div class="navigationfichesuivante boutonnavigationtoujoursvisible"><img title="Suivant [Alt+N]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Suivant.svg" alt="Suivant"></div>    </div>
+            <hr class="divider">
+            <h1 id="titreh1" class="text-center">    <span class="titrechapitre"></span><span class="numerotitrefiche">Afficher des données en lignes et en colonnes avec le Treeview</span>
+</h1>
+            <hr class="divider bas">
+            
+                                    <div class="contenu" style="height: auto !important;">
+                    
+        <div id="iconesfiche" class="boutonshaut">
+    </div>    
+    
+    <div id="textefiche" class="grosseur4" style="height: auto !important;">
+        <p>Quand on travaille avec des données, il est intéressant de 
+pouvoir faire un affichage en lignes et en colonnes. Avec tkinter, le 
+widget <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/ttk-Treeview.html" target="_blank" rel="nofollow noopener">Treeview</a> est tout indiqué pour cette tâche.</p><div class="publicite" style="height: auto !important;">
+            <p class="titre">▼Publicité</p>
+            <div class="pubadsense">
+                <script async="" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-0968524214519104" data-ad-slot="7696377060" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1080px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1080px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0px; position: absolute; top: 0px; border: 0px none; width: 1080px; height: 280px; overflow: visible;" width="1080" height="280" frameborder="0"></iframe></ins></ins></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div></div>
+<p>Voici un exemple d'utilisation&nbsp;:</p>
+<div class="extraitcode">
+<div class="titre">Python</div>
+<div class="codepython">
+<p>#!/usr/bin/env python</p>
+<p>&nbsp;</p>
+<p>from tkinter import *</p>
+<p>from tkinter.ttk import *</p>
+<p>import sqlite3</p>
+<p>import sys</p>
+<p>import traceback</p>
+<p>&nbsp;</p>
+<p># fenêtre principale</p>
+<p>fenetre = Tk()</p>
+<p>fenetre.title('Système scolaire')</p>
+<p>&nbsp;</p>
+<p># libellé</p>
+<p>libelle = Label(fenetre, text = 'Étudiants')</p>
+<p>libelle.pack(padx = 10, pady = 10)</p>
+<p>&nbsp;</p>
+<p>#tableau</p>
+<p><span class="important">tableau = Treeview(fenetre, columns=('nomfamille', 'prenom', 'da'))</span></p>
+<p><span class="important">tableau.heading('nomfamille', text='Nom de famille')</span></p>
+<p><span class="important">tableau.heading('prenom', text='Prénom')</span></p>
+<p><span class="important">tableau.heading('da', text='DA')</span></p>
+<p><span class="important">tableau['show'] = 'headings'</span> # sans 
+ceci, il y avait une colonne vide à gauche qui a pour rôle d'afficher le
+ paramètre "text" qui peut être spécifié lors du insert</p>
+<p><span class="important">tableau.pack(padx = 10, pady = (0, 10))</span></p>
+<p>&nbsp;</p>
+<p># bouton pour terminer le programme</p>
+<p>bouton_terminer = Button(fenetre, text = 'Terminer', command = fenetre.destroy)</p>
+<p>bouton_terminer.pack(padx = 10, pady = (0, 10))</p>
+<p>&nbsp;</p>
+<p># lecture et affichage des données</p>
+<p>try:</p>
+<p>&nbsp; &nbsp; connexion = None</p>
+<p>&nbsp; &nbsp; connexion = sqlite3.connect('file:systemescolaire.db?mode=rw', uri=True)</p>
+<p>&nbsp; &nbsp; curseur = connexion.cursor()</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; requete = 'SELECT id, nomfamille, prenom, da FROM etudiants ORDER BY nomfamille, prenom'</p>
+<p>&nbsp; &nbsp; curseur.execute(requete)</p>
+<p>&nbsp; &nbsp; resultat = curseur.fetchall()</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; if len(resultat):</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; for enreg in resultat:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # chaque ligne n'a pas de 
+parent, est ajoutée à la fin de la liste, utilise le champ id comme 
+identifiant et on fournit les valeurs pour chacune des colonnes du 
+tableau</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="important">tableau.insert('', 'end', iid=enreg[0], values=(enreg[1], enreg[2], enreg[3]))</span></p>
+<p>&nbsp; &nbsp; else:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; libelle.configure(text = 'Il n\'y a présentement aucun étudiant.')</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;tableau.pack_forget()</p>
+<p>&nbsp;</p>
+<p>except sqlite3.OperationalError as e:</p>
+<p>&nbsp; &nbsp; if not connexion:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; libelle.configure('La connexion à la base de données a échoué.')</p>
+<p>&nbsp; &nbsp; else:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; libelle.configure(text='Il y a une erreur dans la requête SQL.')</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; traceback.print_exc(file=sys.stdout)</p>
+<p>&nbsp;</p>
+<p>except Exception as e:</p>
+<p>&nbsp; &nbsp; libelle.configure(text='Une erreur inattendue est survenue.')</p>
+<p>&nbsp; &nbsp; traceback.print_exc(file=sys.stdout)</p>
+<p>&nbsp;</p>
+<p>finally:</p>
+<p>&nbsp; &nbsp; if connexion:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; connexion.close()</p>
+<p>&nbsp;</p>
+<p># la fenêtre s'affiche puis attend les interactions de l'usager</p>
+<p>fenetre.mainloop()</p>
+</div>
+</div>
+<p><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Python-ExempleTreeview.png" alt="Exemple de Treeview"></p>
+<p>Voici quelques explications&nbsp;:</p>
+<ul>
+<li>Lors de la création du Treeview, qui s'appelle ici tableau, on 
+précise qu'il y aura 3 colonnes. On donne un nom à ces colonnes pour 
+pouvoir les configurer individuellement.
+<div class="extraitcode">
+<div class="titre">Python</div>
+<div class="codepython">
+<p>tableau = Treeview(fenetre, columns=('nomfamille', 'prenom', 'da'))</p>
+</div>
+</div>
+</li>
+<li>On précise ensuite le texte à affiche en haut de chacune des colonnes.
+<div class="extraitcode">
+<div class="titre">Python</div>
+<div class="codepython">
+<p>tableau.heading('nomfamille', text='Nom de famille')</p>
+<p>tableau.heading('prenom', text='Prénom')</p>
+<p>tableau.heading('da', text='DA')</p>
+</div>
+</div>
+</li>
+<li>Le Treeview est conçu pour afficher un libellé suivi des données. 
+Puisque nous ne sommes intéressés que par l'affichage des données, nous 
+allons cacher la colonne qu'il avait prévue pour le libellé.
+<div class="extraitcode">
+<div class="titre">Python</div>
+<div class="codepython">
+<p>tableau['show'] = 'headings'</p>
+</div>
+</div>
+</li>
+<li>Après avoir retrouvé les données à partir de la BD, nous les ajoutons au tableau.
+<div class="extraitcode">
+<div class="titre">Python</div>
+<div class="codepython">
+<p>tableau.insert('', 'end', iid=enreg[0], values=(enreg[1], enreg[2], enreg[3]))</p>
+</div>
+</div>
+<ul>
+<li>Le premier paramètre est laissé à blanc pour indiquer que la ligne ajoutée n'est pas un sous-ensemble d'une autre ligne.</li>
+<li>Le second paramètre est à 'end' pour indiquer que la ligne doit être affichée à la fin de la liste.</li>
+<li>Le troisième paramètre, <span class="instruction">iid</span>, permet de préciser un identifiant pour la ligne. <span class="important">Il doit s'agir d'une information unique.</span>
+ On utilisera généralement la clé primaire. Ceci sera utile plus tard 
+quand nous voudrons faire des opérations CRUD sur ces données.</li>
+<li>Le quatrième paramètre, <span class="instruction">values</span>, est
+ un tuple qui précise les données à afficher dans chacune des colonnes. 
+Il s'agit en fait des champs de l'enregistrement actuellement traité 
+dans la boucle. <br>Si le Treeview n'a qu'une seule colonne, n'oubliez pas la virgule terminale dans le tuple (ex : <span class="instruction">values=(variable<span class="important">,</span>)</span>) sinon, Python considèrera que le texte à afficher est lui-même un tuple et séparera les mots aux espaces.</li>
+<li>Il aurait été possible d'ajouter un autre paramètre : text. C'est la
+ valeur de ce paramètre qui aurait été affichée dans la toute première 
+colonne, celle que nous avons choisi de cacher.</li>
+</ul>
+</li>
+<li>Comme dans toutes les applications qui travaillent avec une base de 
+données, nous avons pris soin de placer la connexion et la requête dans 
+un bloc try...except. Nous avons traité spécifiquement les exceptions 
+dues à une erreur SQL ainsi que toutes les autres exceptions possibles. 
+Nous avons également pris soin de réagir correctement dans le cas où la 
+requête n'aurait retourné aucune donnée.</li>
+</ul>
+    </div><div style="width: 100%; height: auto; clear: both; text-align: center;" class="google-auto-placed"><ins style="display: block; margin: 35px auto 10px; background-color: transparent; height: 280px;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-0968524214519104" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1080px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1080px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:1080px;height:280px;" width="1080" height="280" frameborder="0"></iframe></ins></ins></ins></div>
+    <div id="datemodificationfiche">
+        Dernière révision le 21 novembre 2018
+    </div>
+
+    <div class="navigationbasfiche">
+        <div class="navigationficheprecedente "><img title="Précédent [Alt+P]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Precedent.svg" alt="Précédent"></div>
+<div class="navigationfichesuivante "><img title="Suivant [Alt+N]" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/Suivant.svg" alt="Suivant"></div>    </div>
+
+            <div class="ecrivezmoi">
+            <div class="text-center mt-3">
+                <a class="btn btn-primary" href="https://apical.xyz/contact?de=https%3A%2F%2Fapical.xyz%2Ffiches%2Fenvironnement_graphique_tkinter%2Fafficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview">Écrivez-moi&nbsp;!</a>
+            </div>
+        </div>
+        
+        <div id="lienssociaux">
+            <div class="auteur text-center mt-5">Merci de partager !</div>
+            <div class="text-center mt-1">
+                <a href="http://www.facebook.com/sharer.php?u=https://apical.xyz/fiches/environnement_graphique_tkinter/afficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview" target="_blank">
+                    <img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/facebook.svg" title="Facebook" alt="Partager sur Facebook">
+                </a>
+                <a href="http://twitter.com/share?url=https://apical.xyz/fiches/environnement_graphique_tkinter/afficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview&amp;text=Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview" target="_blank">
+                    <img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/twitter.svg" title="Twitter" alt="Partager sur Twitter">
+                </a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://apical.xyz/fiches/environnement_graphique_tkinter/afficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview&amp;title=Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview" target="_blank">
+                    <img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/linkedin.svg" title="LinkedIn" alt="Partager sur LinkedIn">
+                </a>
+            </div>
+        </div>
+
+    
+    <div id="commentairesfiche" class="boutonsbas">
+            </div>
+    <div class="boutonsbas">
+        <div class="boutonsgestion">
+            
+</div>
+    </div>
+
+    <div id="autreschapitrespourcettefiche">
+            </div>
+            </div>
+            
+            <div class="push"></div>
+        </div>
+
+        <div class="publicite baspage">
+            <div class="pubhebergement">
+                <p>Site fièrement hébergé chez <a href="http://www.a2hosting.com/?aid=5ca65a17be949" target="_top">A2 Hosting</a>.</p>
+                <p><a href="https://www.a2hosting.com/?aid=5ca65a17be949&amp;bid=ed1c4a67" target="_top"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/ed1c4a67.jpg" alt="" title="" width="728" height="90"></a><img style="border:0" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/imp.gif" alt="" width="1" height="1"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">© 2020 Tous droits réservés.</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">Conception et développement de la plateforme : <span class="auteur"><a href="https://christianelagace.com/" target="_blank">Christiane Lagacé</a></span></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <a class="btn btn-primary" href="https://apical.xyz/contact?de=https%3A%2F%2Fapical.xyz%2Ffiches%2Fenvironnement_graphique_tkinter%2Fafficher_des_donnees_en_lignes_et_en_colonnes_avec_le_treeview">Écrivez-moi&nbsp;!</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    
+    
+    
+    <div class="popupchristiane" id="popuprecherche">
+        <form method="get" action="https://apical.xyz/rechercherFormationsPagesAjax">
+            
+            <input name="rechercher" type="text" id="rechercher" placeholder="Rechercher" required="">
+            <a id="soumettrerecherche" href="#"><img src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/BoutonRechercher.svg" class="boutonrechercher" title="Rechercher dans tout le site" alt="Soumettre"></a>
+        </form>
+        <span class="boutonrefermer"></span>
+    </div>
+    <div class="popupchristiane" id="popupauthentification">
+        <div id="menuusager" class="cache">
+    
+            <p><label id="prenomnomfamille"></label></p>
+        <a class="btn btn-secondary" href="https://apical.xyz/usagers//modification">Profil</a>
+        <a class="btn btn-secondary" id="deconnecter" href="#">Déconnecter</a>
+    </div>
+
+<div id="formulaireauthentification">
+    <span id="messageauthentification"></span>
+    <form method="post" action="https://apical.xyz/usagers/authentifier" class="form-horizontal">
+        <input type="hidden" name="_token" value="TRoljmMyObwdyyzCTb2t7tyjjUv1LPYTQ4iEY225">
+
+        <div class="form-group row">
+            
+            <label for="login" class="control-label col-sm-5 requis">Usager: </label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="login" id="login" autofocus="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="motdepasse" class="control-label col-sm-5 requis">Mot de passe: </label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="motdepasse" id="motdepasse">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="control-label col-sm-5"></div>
+            <div class="col-sm-6">
+                <div class="form-check">
+                    <label for="resterconnecte" class="form-check-label" checked="">
+                        <input class="form-check-input" type="checkbox" id="resterconnecte" name="resterconnecte">
+                        Rester connecté
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="control-label col-sm-5"></div>
+            <div class="col-sm-6">
+                <a id="soumettreauthentification" class="btn btn-secondary" href="#">Soumettre</a>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="control-label col-sm-5"></div>
+            <div class="col-sm-6">
+                <a href="https://apical.xyz/usagers/creation">Nouvel usager</a>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+    <span class="boutonrefermer"></span>
+    </div>
+    <div class="popupchristiane" id="popupbienvenue"></div>
+    
+
+    
+    
+    
+    <script src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/all.js"></script>
+
+    <script>
+        $(function () {
+            $('.reinitialiserCookiesMenuFormations').click(function (event) {
+                event.preventDefault();
+                var jqxhr = $.get("https://apical.xyz/reinitialiserCookiesMenuFormations")
+                    .done(function (response, textStatus, jqXHR) {
+                        $('.consulterecemment').remove();
+                        afficherPopupInformation('La liste des dernières formations consultées a été réinitialisée avec succès !');
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        afficherPopupErreur('Un problème empêche la réinitialisation de la liste des dernières formations consultées.');
+                    });
+            });
+        });
+    </script>
+
+    
+    <script>
+    $(function() {
+        // *********************************************************************************************
+        // *** Première fiche d'un chapitre ************************************************************
+        // *********************************************************************************************
+        ajouterTitreChapitrePourPremiereFiche();
+
+        // *********************************************************************************************
+        // *** Désactive ou réactive les boutons pour passer à la fiche précédente ou suivante. ********
+        // *********************************************************************************************
+        traiterPremiereDerniereFiche();
+
+        // *********************************************************************************************
+        // *** Raccourcis-clavier **********************************************************************
+        // *********************************************************************************************
+        // nécessite mousetrap.min.js : https://craig.is/killing/mice
+
+        Mousetrap.bind('alt+f', function(e) {
+            navigationPremiereFiche();
+        });
+        Mousetrap.bind('alt+p', function(e) {
+            navigationFichePrecedente();
+        });
+        Mousetrap.bind('alt+n', function(e) {
+            navigationFicheSuivante();
+        });
+        Mousetrap.bind('alt+l', function(e) {
+            navigationDerniereFiche();
+        });
+
+        // *********************************************************************************************
+        // *** Enregistrement d'un commentaire *********************************************************
+        // *********************************************************************************************
+
+        $(document).on('click', '.enregistrercommentaire', function(event) {
+            event.preventDefault();
+            // todo : tester si l'ajout de event.stopPropagation(); règle le problème sur Firefox
+
+            afficherEnAttente();
+
+            // formulaire dans lequel la balise qui a généré l'appel AJAX était placée
+            var $formulaire = $(this).parents("form:first");
+            var donneesFormulaire = $formulaire.serialize();
+
+            // Encodage des caractères dans commentaire pouvant être considérés comme une attaque avant de faire le postback
+            // pour prévenir les codes 403 (serveur croit que la réponse est une attaque potentielle si elle contient du SQL ou des balises HTML - était nécessaire seulement chez GreenGeeks)
+            //donneesFormulaire = encoderPost(donneesFormulaire);
+
+            var actionFormulaire = $formulaire.attr('action');      // l'URL pour l'appel AJAX doit être absolu.
+
+            // appel AJAX
+            // todo : tester si l'ajout de contentType: "application/json" et/ou async: false et/ou cache: false et/ou  timeout: 60000 règle le problème sur Firefox
+            var jqxhr = $.ajax({
+                type: "POST",
+                url: actionFormulaire,
+                dataType: "json",
+                data: donneesFormulaire
+            })
+                .done(function (response, textStatus, jqXHR) {
+                    if (response.reussi) {
+                        // créée la division des commentaires si elle n'existait pas
+                        if ($('#commentaires .card-body:first').length == 0) {
+                            // même structure de code que dans commentaires.blade.php
+                            // $('#commentairesfiche').prepend('<div class="panel panel-default">' +
+                            $('#commentairesfiche').prepend('<div class="card border-bottom-0">' +
+                                '<div class="card-header">' +
+                                '<a data-toggle="collapse" href="#commentaires">Commentaires sur cette fiche</a>' +
+                                '</div>' +
+                                '<div class="collapse show" aria-expanded="true" id="commentaires">' +
+                                '<div class="card-body">' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>');
+                        }
+                        // ajouter le commentaire au début du tableau
+                        $('#commentaires .card-body:first').prepend(response.commentaireHTML);
+                        // déplace la page jusqu'au nouveau commentaire
+                        $('html, body').animate({scrollTop: $('#commentaires .card-body:first').offset().top }, 'fast');
+                        // réinitialiser le formulaire
+                        $('#commentaire').val('');
+                        $('input[name="auditoire_id"]:first').prop('checked', true);
+                    }
+                    else {
+                        afficherPopupErreur('Un problème a empêché l\'enregistrement du commentaire.');
+                    }
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    afficherPopupErreur('Nous sommes désolés, il n\'est pas possible d\'enregistrer le commentaire pour l\'instant.');
+                })
+                .always(function () {
+                    effacerEnAttente();
+                });
+        });
+
+        // *********************************************************************************************
+        // *** Suppression d'un commentaire ************************************************************
+        // *********************************************************************************************
+
+        $(document).on('click', '.supprimercommentaire', function(event) {
+            event.preventDefault();
+
+            afficherEnAttente();
+
+            // formulaire dans lequel la balise qui a généré l'appel AJAX était placée
+            var $formulaire = $(this).parents("form:first");
+            var donneesFormulaire = $formulaire.serialize();
+            var actionFormulaire = $formulaire.attr('action');      // l'URL pour l'appel AJAX doit être absolu.
+
+            // appel AJAX
+            var jqxhr = $.ajax({
+                type: "POST",
+                url: actionFormulaire,
+                dataType: "json",
+                data: donneesFormulaire
+            })
+                .done(function (response, textStatus, jqXHR) {
+                    if (response.reussi) {
+                        // supprimer le commentaire du tableau
+                        var $ligne = $formulaire.parents('.card:first');
+                        $ligne.remove();
+                        // efface tout le panel s'il n'y a plus de commentaires (mais laisse la possibilité d'entrer de nouveaux commentaires)
+                        if ($('#commentairesfiche .card .card').length == 0) {
+                            $('#commentairesfiche .card:first').remove();
+                        }
+                    }
+                    else {
+                        afficherPopupErreur('Un problème a empêché la suppression du commentaire.');
+                    }
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    afficherPopupErreur('Nous sommes désolés, il n\'est pas possible de supprimer le commentaire pour l\'instant.');
+                })
+                .always(function () {
+                    effacerEnAttente();
+                });
+        });
+
+        // *********************************************************************************************
+        // *** Grossir le texte ************************************************************************
+        // *********************************************************************************************
+
+        $('.grossirtexte').click(function (event) {
+            event.preventDefault();
+
+            var jqxhr = $.get("/fiches/grossirTexte")
+                .done(function (response, textStatus, jqXHR) {
+                    ajusterTailleTexte(response);
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    afficherPopupErreur('Nous sommes désolés, il n\'est pas possible de modifier la taille du texte pour l\'instant.');
+                });
+
+        });
+
+        // *********************************************************************************************
+        // *** Rapetisser le texte ************************************************************************
+        // *********************************************************************************************
+
+        $('.rapetissertexte').click(function (event) {
+            event.preventDefault();
+
+            var jqxhr = $.get("/fiches/rapetisserTexte")
+                .done(function (response, textStatus, jqXHR) {
+                    ajusterTailleTexte(response);
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    afficherPopupErreur('Nous sommes désolés, il n\'est pas possible de modifier la taille du texte pour l\'instant.');
+                });
+
+        });
+    });   // fin du document.ready
+
+    function ajusterTailleTexte(taille) {
+        var classe = 'grosseur' + taille;
+
+        var grosseurPrecedente = taille - 1;
+        if (grosseurPrecedente < 1) {
+            grosseurPrecedente = 1;
+        }
+
+        var grosseurSuivante = taille + 1;
+        if (grosseurSuivante > 8) {
+            grosseurSuivante = 8;
+        }
+
+        $('#textefiche').removeClass();
+        $('#textefiche').addClass(classe);
+
+        // todo : arranger ceci, ne fonctionne pas
+        //$('.grossirtexte').attr('title', 'Passer à la taille ' + grosseurSuivante + (grosseurSuivante == 4 ? ' (taille normale)' : ''));
+        //$('.rapetissertexte').attr('title', 'Passer à la taille ' + grosseurPrecedente + (grosseurPrecedente == 4 ? ' (taille normale)' : ''));
+    }
+
+</script>
+
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_9664168367941" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="Apical%20|%20Afficher%20des%20donn%C3%A9es%20en%20lignes%20et%20en%20colonnes%20avec%20le%20Treeview_fichiers/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-0968524214519104"></iframe></html>

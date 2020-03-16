@@ -1,0 +1,1 @@
+int multip(int a,int b);
